@@ -2,44 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hashima Island</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <header class="hero">
+    <div class="hero-image-container">
+      <img src="hashima.jpg" alt="Hashima Island" class="hero-image" />
+    </div>
     <div class="hero-content">
       <h1>Hashima Island</h1>
       <p>The Forgotten Ghost Island of Japan</p>
     </div>
   </header>
 
-  <section class="section light">
-    <h2>What is Hashima Island?</h2>
-    <p>
-      Also known as Gunkanjima or "Battleship Island," Hashima was once a thriving coal mining facility owned by Mitsubishi. It was famous for having one of the highest population densities in the world during its peak.
-    </p>
-  </section>
-
   <section class="section dark">
-    <h2>Historical Timeline</h2>
-    <ul>
-      <li><strong>1887:</strong> Coal discovered on the island.</li>
-      <li><strong>1916:</strong> Japan’s first large concrete building constructed here.</li>
-      <li><strong>1940s:</strong> Forced labor during WWII.</li>
-      <li><strong>1974:</strong> Mine closed, island abandoned.</li>
-    </ul>
+    <h2>History of Hashima</h2>
+    <p>Hashima Island, also known as Gunkanjima or "Battleship Island," was once a thriving coal mining facility off the coast of Nagasaki, Japan. It symbolized rapid industrialization, but was abandoned in 1974 and left to decay. Its eerie, fortress-like silhouette tells a haunting story of labor, hardship, and history frozen in time.</p>
   </section>
 
-  <section class="section light">
-    <h2>Modern Legacy</h2>
-    <p>
-      Today, Hashima Island stands as a haunting symbol of industrial history. It was featured in the James Bond movie <em>Skyfall</em> and is a UNESCO World Heritage Site.
-    </p>
-  </section>
+  <script>
+    const heroImage = document.querySelector('.hero-image');
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      heroImage.style.transform = `scale(${1 + scrollY / 2000})`;
+      heroImage.style.opacity = `${1 - scrollY / 1000}`;
+    });
+  </script>
 
-  <footer>
-    <p>© 2025 Hashima History. Apple-inspired design for educational use.</p>
-  </footer>
 </body>
 </html>
