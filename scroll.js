@@ -1,18 +1,34 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const reveals = document.querySelectorAll(".reveal");
+// Wait until the DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.querySelector('.dark-mode-toggle');
+  const body = document.body;
 
-  function revealOnScroll() {
-    for (let i = 0; i < reveals.length; i++) {
-      const windowHeight = window.innerHeight;
-      const elementTop = reveals[i].getBoundingClientRect().top;
-      const elementVisible = 100;
-
-      if (elementTop < windowHeight - elementVisible) {
-        reveals[i].classList.add("visible");
-      }
-    }
+  // Apply dark mode if saved preference is "enabled"
+  if (localStorage.getItem('darkMode') === 'enabled') {
+    body.classList.add('dark-mode');
   }
 
-  window.addEventListener("scroll", revealOnScroll);
-  revealOnScroll(); // Reveal elements already in view on load
+  // Toggle dark mode and save preference
+  toggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+
+    if (body.classList.contains('dark-mode')) {
+      localStorage.setItem('darkMode', 'enabled');
+    } else {
+      localStorage.setItem('darkMode', 'disabled');
+    }
+  });
+
+  // Intersection Observer to reveal sections on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('section').forEach(section => {
+    observer.observe(section);
+  });
 });
