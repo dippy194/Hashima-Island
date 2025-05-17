@@ -178,6 +178,19 @@ window.addEventListener('scroll', () => {
     heroTitle.style.transform = `translateY(${parallax}px)`;
   }
 });
+
+// --- Back to Top Button ---
+const backToTop = document.getElementById('back-to-top');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) {
+    backToTop.style.display = 'block';
+  } else {
+    backToTop.style.display = 'none';
+  }
+});
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 </script>
 <button id="back-to-top" title="Back to top">↑</button>
 </body>
