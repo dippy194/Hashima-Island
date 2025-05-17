@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hashima Island</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 <body>
   <header class="hero">
     <button class="dark-mode-toggle" id="darkToggle" onclick="toggleDarkMode()">
@@ -9,62 +17,80 @@
   <div class="container">
     <section class="reveal">
       <h2>Introduction</h2>
-      <p>Hashima Island, also known as Gunkanjima, was once a thriving coal mining facility...</p>
+      <p>Hashima Island, also called Gunkanjima (Battleship Island), lies off the coast of Nagasaki. Once a hub of coal mining, it stood as a symbol of Japan’s rapid industrialization in the early 20th century.</p>
     </section>
 
     <section class="reveal">
       <h2>History of Hashima Island</h2>
-      <p>Discovered for coal in the early 1800s, Mitsubishi bought the island in 1890 and developed it into a concrete fortress by 1916...</p>
-      <blockquote>“You could reach the other side by hopping over rooftops.” – Former resident</blockquote>
+      <p>Hashima was first populated in the late 1800s when coal was discovered. Mitsubishi bought the island in 1890 and began turning it into a major undersea coal mining facility. Over the decades, it became the most densely populated place in the world, with concrete apartment complexes, schools, and shops — all confined to the island's tiny footprint.</p>
+      <blockquote>"You could reach the other side by hopping over rooftops." – Former resident</blockquote>
     </section>
 
     <section class="reveal">
       <h2>Korean and Chinese Forced Labor</h2>
-      <p>During WWII, Hashima became a site of forced labor, especially for Korean and Chinese workers...</p>
+      <p>During WWII, the island was used for forced labor. Over 800 Koreans and many Chinese workers were made to work in dangerous conditions in the mines. Many suffered abuse, malnutrition, and death. Despite its heritage status, critics argue Japan has not fully acknowledged this dark chapter.</p>
       <img src="korea.jpg" alt="Korean Survivors">
-      <blockquote>“It was like living in hell.” – Korean survivor, cited by Yonhap News</blockquote>
+      <blockquote>"It was like living in hell." – Korean survivor, Yonhap News</blockquote>
     </section>
 
     <section class="reveal">
       <h2>Post-Abandonment and Global Attention</h2>
-      <p>By 1974, the coal mines closed and the island was abandoned overnight...</p>
+      <p>Mining stopped in 1974, and Hashima was abandoned overnight. For decades it sat crumbling until being opened to tourists in 2009. It gained international recognition after being featured in the James Bond movie *Skyfall* and was declared a UNESCO World Heritage Site in 2015, sparking both interest and controversy.</p>
     </section>
 
     <section class="reveal">
       <h2>Timeline</h2>
       <div class="timeline">
         <div class="timeline-item">
-          <h3>1810s</h3>
-          <p>Coal discovered on Hashima Island.</p>
+          <div class="dot"></div>
+          <div class="content">
+            <h3>1810s</h3>
+            <p>Coal discovered on Hashima Island.</p>
+          </div>
         </div>
         <div class="timeline-item">
-          <h3>1890</h3>
-          <p>Mitsubishi acquires the island and begins mining development.</p>
+          <div class="dot"></div>
+          <div class="content">
+            <h3>1890</h3>
+            <p>Mitsubishi purchases the island and begins mining.</p>
+          </div>
         </div>
         <div class="timeline-item">
-          <h3>1940s</h3>
-          <p>WWII-era forced labor of Koreans and Chinese increases dramatically.</p>
+          <div class="dot"></div>
+          <div class="content">
+            <h3>1940s</h3>
+            <p>Forced labor of Korean and Chinese workers increases under Japanese wartime control.</p>
+          </div>
         </div>
         <div class="timeline-item">
-          <h3>1974</h3>
-          <p>Mining ceases and Hashima is abandoned.</p>
+          <div class="dot"></div>
+          <div class="content">
+            <h3>1974</h3>
+            <p>Coal mines close; Hashima is abandoned.</p>
+          </div>
         </div>
         <div class="timeline-item">
-          <h3>2009</h3>
-          <p>Island opened to tourism.</p>
+          <div class="dot"></div>
+          <div class="content">
+            <h3>2009</h3>
+            <p>Island reopens to tourists after years of decay.</p>
+          </div>
         </div>
         <div class="timeline-item">
-          <h3>2015</h3>
-          <p>Declared UNESCO World Heritage site.</p>
+          <div class="dot"></div>
+          <div class="content">
+            <h3>2015</h3>
+            <p>Recognized as a UNESCO World Heritage Site.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="reveal sources">
+    <section class="reveal">
       <h2>Sources</h2>
       <ul>
-        <li><a href="https://english.visitkorea.or.kr/">Yonhap News via Visit Korea</a></li>
         <li><a href="https://www.japan.travel/en/uk/">Japan National Tourism Organization</a></li>
+        <li><a href="https://english.visitkorea.or.kr/">Yonhap News (via Visit Korea)</a></li>
       </ul>
     </section>
   </div>
@@ -73,13 +99,26 @@
     <p>&copy; 2025 Hashima Island Project. All rights reserved.</p>
   </footer>
 
-  <!-- JavaScript -->
-  <script src="scroll.js"></script>
   <script>
     function toggleDarkMode() {
       document.body.classList.toggle("dark-mode");
       const icon = document.querySelector(".sun-moon-icon");
       icon.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
     }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const reveals = document.querySelectorAll(".reveal");
+      function revealOnScroll() {
+        reveals.forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 100) {
+            el.classList.add("visible");
+          }
+        });
+      }
+      window.addEventListener("scroll", revealOnScroll);
+      revealOnScroll();
+    });
   </script>
 </body>
+</html>
