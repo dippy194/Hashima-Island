@@ -1,14 +1,14 @@
-/* General Reset */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Apple-style font */
+/* Apple-style font and soft gradient background */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
-  background-color: #fafafa;
+  background: linear-gradient(to bottom, #f9f9f9, #e9ecf0);
   color: #1c1c1e;
   line-height: 1.7;
   font-size: 17px;
@@ -32,7 +32,7 @@ body {
   padding: 2rem 3rem;
   border-radius: 16px;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .text-overlay h1 {
@@ -46,15 +46,25 @@ body {
   font-weight: 300;
 }
 
-/* Content Sections */
+/* Main Content */
 main.content {
   padding: 4rem 5%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* Section Styling */
 section {
-  margin-bottom: 4rem;
+  background: white;
+  padding: 2.5rem 2rem;
+  margin-bottom: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+section:hover {
+  transform: translateY(-4px);
 }
 
 section h2 {
@@ -65,14 +75,9 @@ section h2 {
   padding-left: 1rem;
 }
 
+/* Paragraphs */
 section p {
   margin-bottom: 1rem;
-}
-
-/* Timeline */
-.timeline h3 {
-  font-size: 1.3rem;
-  color: #007aff;
 }
 
 /* Quotes */
@@ -85,14 +90,31 @@ section p {
   border-radius: 8px;
 }
 
-/* Image Enhancements */
+/* Timeline Styles */
+.timeline {
+  margin-top: 1rem;
+  padding-left: 1rem;
+  border-left: 3px solid #007aff;
+}
+
+.timeline h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #007aff;
+}
+
+.timeline p {
+  margin-bottom: 1.5rem;
+}
+
+/* Images */
 .section-image {
   display: block;
   width: 100%;
   max-width: 750px;
   margin: 2rem auto;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 /* Links */
@@ -104,29 +126,45 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Footer-style End Section */
-section:last-of-type {
-  padding: 3rem 0;
-  background: #f2f2f7;
-  border-top: 2px solid #e0e0e0;
+/* Footer-like Final Section */
+footer {
+  padding: 3rem 2rem;
+  background: #202124;
+  color: #f5f5f7;
   text-align: center;
+  border-top: 5px solid #007aff;
 }
 
-section:last-of-type h2 {
+footer h2 {
   font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
   margin-bottom: 1rem;
 }
 
-section:last-of-type ul {
-  list-style: none;
-  padding: 0;
-}
-
-section:last-of-type li {
+footer li {
   margin-bottom: 0.5rem;
+  font-size: 0.95rem;
 }
 
-/* Responsive */
+footer a {
+  color: #90cdf4;
+  font-weight: 500;
+}
+
+/* Divider Elements (Optional Decorative) */
+.divider {
+  height: 1px;
+  background-color: #d0d3d8;
+  margin: 3rem 0;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .text-overlay {
     padding: 1.5rem;
