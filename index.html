@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hashima Island Project</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <nav>
     <img id="logo" src="logo-light.jpg" alt="Logo" />
-    <button id="darkModeToggle">Toggle</button>
     <div class="nav-toggle" id="navToggle">
       <span></span>
       <span></span>
@@ -30,12 +29,16 @@
     </div>
   </header>
 
+  <div class="dark-mode-container">
+    <button id="darkModeToggle">Toggle Dark Mode</button>
+  </div>
+
   <main>
     <section id="history">
       <div class="content-box">
         <h2>History of Hashima</h2>
-        <p>Hashima Island, also known as Gunkanjima ("Battleship Island"), was once a thriving coal mining facility operated by Mitsubishi since 1890. It became a symbol of Japan's rapid industrialization in the early 20th century.</p>
-        <p>The island had Japan’s first large concrete building, constructed in 1916 to protect against typhoons. At its peak in 1959, over 5,000 people lived on the tiny island, making it one of the most densely populated places on Earth.</p>
+        <p>Hashima Island, also known as Gunkanjima ("Battleship Island"), was a coal mining facility operated by Mitsubishi since 1890. It was a symbol of Japan’s rapid industrialization and featured the country’s first large concrete apartment building built in 1916 to resist typhoons.</p>
+        <p>By 1959, the island housed over 5,000 people, making it one of the most densely populated places on Earth at the time. Despite its small size, it was a complete city with a school, hospital, shops, and recreational areas.</p>
         <img src="hashima.jpg" alt="Hashima Island" class="section-image" />
       </div>
     </section>
@@ -43,11 +46,14 @@
     <section id="labor">
       <div class="content-box">
         <h2>Forced Labor During WWII</h2>
-        <p>During Japan’s occupation of Korea and parts of China in WWII, forced labor was used on Hashima Island. Many Korean and Chinese laborers were brought to the island under brutal conditions.</p>
+        <p>During Japan’s colonization of Korea and parts of China, laborers were conscripted to Hashima Island under brutal conditions. Korean and Chinese workers were forced to work in dangerous mines, enduring long hours, physical abuse, and lack of freedom.</p>
         <div class="quote">
-          <p>“They treated us like animals. We were not allowed to leave, and the conditions underground were horrific.” — Korean survivor, quoted by Yonhap News</p>
+          <p>“It was like living in hell. You never knew if you would come back alive from the mines.” — Korean survivor testimony</p>
         </div>
-        <p>The laborers faced hazardous mining conditions, long hours, and abuse. Despite Mitsubishi and Japan acknowledging the island’s historical role, the extent of abuse remains a subject of dispute.</p>
+        <div class="quote">
+          <p>“I was only a teenager. We were constantly watched and beaten. We never saw daylight.” — Survivor quoted by Yonhap News</p>
+        </div>
+        <p>Despite postwar reparations and partial acknowledgments, the full history of the forced laborers remains controversial and contested in international discussions.</p>
         <img src="korea.jpg" alt="Korean workers" class="section-image" />
       </div>
     </section>
@@ -56,12 +62,14 @@
       <div class="content-box">
         <h2>Historical Timeline</h2>
         <div class="timeline">
-          <p><strong>1890:</strong> Mitsubishi buys the island and begins coal mining.</p>
-          <p><strong>1916:</strong> Japan's first large concrete apartment building built.</p>
-          <p><strong>1940s:</strong> Forced Korean and Chinese laborers brought to island.</p>
-          <p><strong>1959:</strong> Population peaks at over 5,000 people.</p>
-          <p><strong>1974:</strong> Mine closes; island is abandoned.</p>
-          <p><strong>2015:</strong> Hashima becomes UNESCO World Heritage Site.</p>
+          <p><strong>1890:</strong> Mitsubishi purchases the island and begins mining operations.</p>
+          <p><strong>1916:</strong> Japan's first large concrete apartment block is constructed on the island.</p>
+          <p><strong>1930s-40s:</strong> During WWII, forced labor of Korean and Chinese individuals begins.</p>
+          <p><strong>1945:</strong> Japan surrenders; island continues to operate post-war.</p>
+          <p><strong>1959:</strong> Population reaches peak with over 5,200 residents.</p>
+          <p><strong>1974:</strong> Coal reserves decline; mine closes and island is abandoned.</p>
+          <p><strong>2009:</strong> Tours to the island begin.</p>
+          <p><strong>2015:</strong> Hashima is designated a UNESCO World Heritage Site, sparking debate over labor history.</p>
         </div>
       </div>
     </section>
@@ -71,7 +79,7 @@
         <h2>Sources</h2>
         <ul>
           <li><a href="https://www.japan.travel/en/uk/inspiration/hashima-gunkanjima-battleship-island/" target="_blank">Japan National Tourism Organization</a></li>
-          <li><a href="https://en.yna.co.kr/view/AEN20200729008300325" target="_blank">Yonhap News</a></li>
+          <li><a href="https://en.yna.co.kr/view/AEN20200729008300325" target="_blank">Yonhap News Article on Korean Survivors</a></li>
         </ul>
       </div>
     </section>
@@ -102,7 +110,6 @@
 
     const navToggle = document.getElementById("navToggle");
     const navMenu = document.getElementById("navMenu");
-
     navToggle.addEventListener("click", () => {
       navMenu.classList.toggle("active");
     });
