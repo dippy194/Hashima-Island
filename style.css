@@ -1,202 +1,141 @@
-/* General Reset & Fonts */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
+  margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f7f9fc;
-  color: #222;
-  transition: background-color 0.3s, color 0.3s;
-  overflow-x: hidden;
+  background: #fff;
+  color: #000;
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
-/* Hero Section */
-.hero {
-  background: url('hashima.jpg') center/cover no-repeat;
-  height: 70vh;
+.dark-mode {
+  background: #000;
+  color: #fff;
+}
+
+header.hero {
+  position: relative;
+  background: url('hashima.jpg') no-repeat center center/cover;
+  height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   text-align: center;
+  color: white;
 }
 
 .hero h1 {
   font-size: 4rem;
-  color: white;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  background: rgba(0,0,0,0.5);
+  padding: 1rem 2rem;
+  border-radius: 12px;
 }
 
-/* Dark Mode Toggle */
 .dark-mode-toggle {
   position: absolute;
   top: 20px;
   left: 20px;
-  background: transparent;
+  background: black;
+  color: white;
   border: none;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
   cursor: pointer;
-  z-index: 10;
-  transition: transform 0.4s ease;
+  transition: background 0.3s ease;
+  z-index: 1000;
 }
 
-.sun-moon-icon {
-  display: inline-block;
-  transition: transform 0.4s ease;
-}
-
-body.dark-mode .sun-moon-icon {
-  transform: rotate(180deg);
-}
-
-/* Container */
 .container {
-  padding: 40px;
-  max-width: 1100px;
-  margin: auto;
+  padding: 2rem 5vw;
 }
 
-/* Section Styling */
 section {
-  background: white;
-  margin-bottom: 40px;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 0 18px rgba(0, 0, 0, 0.05);
+  background: #f0f4ff;
+  margin: 2rem 0;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  transition: transform 0.6s ease, opacity 0.6s ease;
   opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s forwards;
-  animation-delay: 0.3s;
+  transform: translateY(50px);
 }
 
-section h2 {
-  color: #2365b0;
-  margin-bottom: 10px;
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-section p,
-section li {
-  line-height: 1.6;
-  font-size: 1.05rem;
-  margin-bottom: 15px;
+.dark-mode section {
+  background: #1a1a1a;
+  color: #fff;
 }
 
 blockquote {
-  margin-top: 15px;
-  padding-left: 20px;
-  border-left: 4px solid #2365b0;
+  border-left: 4px solid #007bff;
+  padding-left: 1rem;
+  margin-top: 1rem;
   font-style: italic;
   color: #333;
 }
 
-/* Korea Image */
-section img {
-  width: 100%;
-  max-width: 500px;
-  display: block;
-  margin: 20px auto;
-  border-radius: 10px;
+.dark-mode blockquote {
+  border-color: #3399ff;
+  color: #ccc;
 }
 
-/* Timeline Styling */
 .timeline {
+  border-left: 3px solid #007bff;
+  margin-left: 1rem;
+  padding-left: 1.5rem;
   position: relative;
-  padding-left: 30px;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 20px;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: #2365b0;
 }
 
 .timeline-item {
   position: relative;
-  margin: 30px 0;
-  padding-left: 40px;
+  margin-bottom: 2rem;
 }
 
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: 12px;
-  top: 8px;
-  width: 16px;
-  height: 16px;
-  background: #2365b0;
+.timeline-item .dot {
+  width: 14px;
+  height: 14px;
+  background: #007bff;
   border-radius: 50%;
-  border: 3px solid white;
+  position: absolute;
+  left: -25px;
+  top: 6px;
 }
 
-.timeline-item h3 {
-  margin-bottom: 5px;
-  color: #2365b0;
+.timeline-item .content h3 {
+  margin: 0;
   font-size: 1.2rem;
+  color: #007bff;
 }
 
-/* Sources */
-.sources a {
-  color: #2365b0;
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li a {
+  color: #007bff;
   text-decoration: none;
 }
 
-/* Footer */
+img {
+  display: block;
+  margin: 1rem auto;
+  max-width: 80%;
+  border-radius: 12px;
+}
+
 footer {
   text-align: center;
-  padding: 25px;
-  font-size: 0.95rem;
-  background-color: #f1f1f1;
+  padding: 1rem;
+  background: #eaeaea;
+  color: #333;
 }
 
-/* Scroll Animation */
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-  background-color: #121212;
-  color: #f5f5f5;
-}
-
-body.dark-mode section {
-  background-color: #1e1e1e;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
-}
-
-body.dark-mode h2,
-body.dark-mode .timeline-item h3 {
-  color: #4da6ff;
-}
-
-body.dark-mode blockquote {
+.dark-mode footer {
+  background: #111;
   color: #ccc;
-  border-left-color: #4da6ff;
-}
-
-body.dark-mode .timeline::before,
-body.dark-mode .timeline-item::before {
-  background: #4da6ff;
-}
-
-/* Scroll Script Styling */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.6s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: none;
 }
