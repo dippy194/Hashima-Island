@@ -48,5 +48,19 @@
   <footer>
     <p>© 2025 Hashima Island Project. All rights reserved.</p>
   </footer>
+  <script>
+  const boxes = document.querySelectorAll('.box');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  boxes.forEach(box => observer.observe(box));
+</script>
 </body>
 </html>
