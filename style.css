@@ -463,3 +463,16 @@ body.dark-mode #back-to-top {
   background: #43d3f8;
   color: #10141a;
 }
+
+#hero-title {
+  background: linear-gradient(90deg, #5ecfff, #007bff, #66dfff, #5ecfff);
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 2.5s linear infinite;
+  -webkit-text-fill-color: transparent; /* For Safari */
+}
+@keyframes shine {
+  to { background-position: 200% center; }
+}
