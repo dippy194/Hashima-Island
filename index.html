@@ -1,4 +1,3 @@
-<!-- Trigger rebuild -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,44 +5,170 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hashima Island</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .timeline {
+      margin: 3rem 0;
+      border-left: 4px solid #007aff;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .timeline-event {
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+    .timeline-event.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .timeline-event h3 {
+      margin-bottom: 0.5rem;
+    }
+    .quote {
+      font-style: italic;
+      background-color: #f0f0f0;
+      padding: 1rem;
+      border-left: 4px solid #007aff;
+      margin: 1rem 0;
+    }
+    .section-divider {
+      margin: 3rem auto;
+      width: 80%;
+      height: 2px;
+      background: #ddd;
+    }
+  </style>
 </head>
 <body>
   <header class="hero">
     <div class="text-overlay">
       <h1>Hashima Island</h1>
-      <p>From Industrial Power to Abandoned Prison</p>
+      <p>From Industrial Might to Historical Reckoning</p>
     </div>
   </header>
 
   <main class="content">
     <section>
-      <h2>The Japanese Perspective</h2>
+      <h2>Welcome to Hashima</h2>
       <p>
-        Hashima Island, also known as Gunkanjima or "Battleship Island," is a haunting relic of Japan's industrial boom.
-        Once home to thousands of workers mining undersea coal, it now stands deserted off the coast of Nagasaki. 
-        Japan presents it as a symbol of industrial prowess and modernization during the early 20th century 
-        <a href="https://www.japan.travel/en/spot/752/" target="_blank">(Japan National Tourism Organization)</a>.
+        Hashima Island, also known as Gunkanjima or "Battleship Island," is a haunting relic of Japan’s industrial past.
+        Located near Nagasaki, this once-thriving coal mining facility now stands abandoned — a concrete shell with a layered history.
       </p>
     </section>
 
+    <div class="section-divider"></div>
+
     <section>
-      <h2>The Hidden Reality</h2>
+      <h2>Industrial Boom</h2>
       <p>
-        What Japan’s official narratives often downplay is that many of these workers were Koreans forcibly brought 
-        during Japan’s colonial rule. Labor conditions were dangerous, exploitative, and inhumane.
-        A 2017 report by Yonhap News revealed efforts by Korean survivors and historians to push back against Japan’s 
-        version of events, calling for recognition and memorials
-        <a href="https://en.yna.co.kr/view/AEN20170727005900315" target="_blank">(Yonhap News)</a>.
+        In 1890, Mitsubishi purchased Hashima and transformed it into a coal mining powerhouse. 
+        According to the <a href="https://www.japan.travel/en/spot/752/" target="_blank">Japan National Tourism Organization</a>,
+        “At its peak, more than 5,000 people lived on this small, 6.3-hectare island.”
+      </p>
+      <div class="quote">
+        “Mitsubishi developed the island to extract coal from undersea mines, and people lived in concrete buildings 
+        with rooftop gardens and shops.” — 
+        <a href="https://www.japan.travel/en/spot/752/" target="_blank">JNTO</a>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section>
+      <h2>Forced Labor: The Untold Chapter</h2>
+      <p>
+        During World War II, Hashima’s operations relied heavily on forced labor — particularly from Korea. Workers 
+        endured extreme conditions in the mines. As reported by 
+        <a href="https://en.yna.co.kr/view/AEN20170727005900315" target="_blank">Yonhap News</a>:
+      </p>
+      <div class="quote">
+        “We were forced to work underground for more than 12 hours a day... many were injured, and some even died.” —
+        <a href="https://en.yna.co.kr/view/AEN20170727005900315" target="_blank">Yonhap News</a>
+      </div>
+      <p>
+        Despite international criticism, the Japanese government has been reluctant to fully acknowledge this chapter.
       </p>
     </section>
+
+    <div class="section-divider"></div>
+
+    <section>
+      <h2>Interactive Timeline of Hashima Island</h2>
+      <div class="timeline">
+        <div class="timeline-event">
+          <h3>1810s</h3>
+          <p>Coal discovered on Hashima Island.</p>
+        </div>
+        <div class="timeline-event">
+          <h3>1890</h3>
+          <p>Mitsubishi purchases the island and begins mining operations.</p>
+        </div>
+        <div class="timeline-event">
+          <h3>1940s</h3>
+          <p>Forced Korean laborers sent to work in dangerous underground conditions.</p>
+        </div>
+        <div class="timeline-event">
+          <h3>1974</h3>
+          <p>Mining ceases. Hashima is completely abandoned.</p>
+        </div>
+        <div class="timeline-event">
+          <h3>2009</h3>
+          <p>Island reopens to tourists for guided visits.</p>
+        </div>
+        <div class="timeline-event">
+          <h3>2015</h3>
+          <p>Named a UNESCO World Heritage Site — with some criticism from Korea.</p>
+        </div>
+        <div class="timeline-event">
+          <h3>2017</h3>
+          <p>Yonhap News reports survivors calling for recognition of forced labor history.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section>
+      <h2>Today’s Debate</h2>
+      <p>
+        The image of Hashima Island in media and tourism is often focused on its dramatic architecture. 
+        But many believe this overlooks the suffering endured there. UNESCO has encouraged Japan to present 
+        “the full history” of such sites.
+      </p>
+    </section>
+
+    <div class="section-divider"></div>
 
     <section>
       <h2>Sources</h2>
       <ul>
-        <li><a href="https://www.japan.travel/en/spot/752/" target="_blank">Japan National Tourism Organization</a></li>
-        <li><a href="https://en.yna.co.kr/view/AEN20170727005900315" target="_blank">Yonhap News, 2017</a></li>
+        <li>
+          Japan National Tourism Organization:
+          <a href="https://www.japan.travel/en/spot/752/" target="_blank">www.japan.travel</a>
+        </li>
+        <li>
+          Yonhap News Agency (2017):
+          <a href="https://en.yna.co.kr/view/AEN20170727005900315" target="_blank">www.yna.co.kr</a>
+        </li>
       </ul>
     </section>
   </main>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.timeline-event').forEach(event => {
+      observer.observe(event);
+    });
+  </script>
 </body>
 </html>
