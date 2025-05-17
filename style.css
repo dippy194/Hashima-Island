@@ -18,7 +18,7 @@ body.dark-mode {
 /* Hero section */
 .hero {
   position: relative;
-  background: url('hashima_new.jpg') no-repeat center center/cover;
+  background: url('hashima.jpg') no-repeat center center/cover;
   height: 90vh;
   display: flex;
   align-items: center;
