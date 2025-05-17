@@ -1,63 +1,74 @@
+/* Base styles */
 body {
-  margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #fff;
-  color: #000;
-  transition: background 0.4s ease, color 0.4s ease;
+  margin: 0;
+  background-color: #fff;
+  color: #111;
+  transition: background-color 0.4s, color 0.4s;
+  font-size: 18px;
+  line-height: 1.8;
 }
 
-.dark-mode {
-  background: #000;
-  color: #fff;
+/* Dark mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #eee;
 }
 
-header.hero {
+/* Hero section */
+.hero {
   position: relative;
-  background: url('hashima.jpg') no-repeat center center/cover;
-  height: 60vh;
+  background: url('hashima_new.jpg') no-repeat center center/cover;
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
 }
 
 .hero h1 {
-  font-size: 4rem;
-  background: rgba(0,0,0,0.5);
+  font-size: 3.5rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
   padding: 1rem 2rem;
   border-radius: 12px;
 }
 
+/* Dark mode toggle */
 .dark-mode-toggle {
   position: absolute;
   top: 20px;
   left: 20px;
-  background: black;
-  color: white;
+  background: #000;
+  color: #fff;
   border: none;
-  font-size: 1.5rem;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
+  font-size: 1.3rem;
+  padding: 8px 12px;
+  border-radius: 30px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s, color 0.3s;
   z-index: 1000;
 }
 
+body.dark-mode .dark-mode-toggle {
+  background: #fff;
+  color: #000;
+}
+
+/* Content container */
 .container {
-  padding: 2rem 5vw;
+  padding: 3rem 10%;
 }
 
 section {
-  background: #f0f4ff;
-  margin: 2rem 0;
+  background: #f9f9f9;
+  margin-bottom: 2rem;
   padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.6s ease, opacity 0.6s ease;
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(40px);
 }
 
 section.visible {
@@ -65,29 +76,52 @@ section.visible {
   transform: translateY(0);
 }
 
-.dark-mode section {
-  background: #1a1a1a;
-  color: #fff;
+body.dark-mode section {
+  background: #1e1e1e;
+}
+
+/* Headings */
+h2 {
+  color: #007BFF;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Paragraphs and quotes */
+p {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
 }
 
 blockquote {
-  border-left: 4px solid #007bff;
-  padding-left: 1rem;
-  margin-top: 1rem;
   font-style: italic;
-  color: #333;
+  background: #e0f0ff;
+  padding: 1rem 1.5rem;
+  border-left: 5px solid #007BFF;
+  margin: 1.5rem 0;
+  border-radius: 8px;
 }
 
-.dark-mode blockquote {
-  border-color: #3399ff;
-  color: #ccc;
+body.dark-mode blockquote {
+  background: #2a2a2a;
+  border-left-color: #66aaff;
 }
 
+/* Images */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem auto;
+  border-radius: 10px;
+}
+
+/* Timeline styles */
 .timeline {
-  border-left: 3px solid #007bff;
-  margin-left: 1rem;
-  padding-left: 1.5rem;
   position: relative;
+  margin-left: 20px;
+  border-left: 3px solid #007BFF;
+  padding-left: 20px;
 }
 
 .timeline-item {
@@ -96,46 +130,46 @@ blockquote {
 }
 
 .timeline-item .dot {
-  width: 14px;
-  height: 14px;
-  background: #007bff;
-  border-radius: 50%;
   position: absolute;
-  left: -25px;
-  top: 6px;
+  left: -11px;
+  top: 5px;
+  background: #007BFF;
+  border: 3px solid white;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  z-index: 2;
 }
 
-.timeline-item .content h3 {
+.timeline-item h3 {
   margin: 0;
-  font-size: 1.2rem;
-  color: #007bff;
+  font-size: 1.3rem;
+  color: #007BFF;
 }
 
-ul {
-  list-style: none;
-  padding-left: 0;
+.timeline-item p {
+  margin-top: 0.5rem;
 }
 
-ul li a {
-  color: #007bff;
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #f0f0f0;
+  font-size: 1rem;
+}
+
+body.dark-mode footer {
+  background: #1a1a1a;
+  color: #bbb;
+}
+
+/* Link styling */
+a {
+  color: #007BFF;
   text-decoration: none;
 }
 
-img {
-  display: block;
-  margin: 1rem auto;
-  max-width: 80%;
-  border-radius: 12px;
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #eaeaea;
-  color: #333;
-}
-
-.dark-mode footer {
-  background: #111;
-  color: #ccc;
+a:hover {
+  text-decoration: underline;
 }
