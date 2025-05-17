@@ -6,92 +6,89 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background-color: #f9f9f9;
-  color: #1a1a1a;
-  line-height: 1.7;
+  font-family: "Helvetica Neue", sans-serif;
+  line-height: 1.6;
+  background-color: #fafafa;
+  color: #222;
   padding: 0;
-  margin: 0;
 }
 
 /* Hero Section */
 .hero {
   position: relative;
-  background: url('hashima.jpg') center/cover no-repeat;
-  height: 100vh;
+  width: 100%;
+  height: 65vh;
+  background: url('hashima.jpg') no-repeat center center;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   color: white;
 }
 
 .text-overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 2rem;
-  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.55);
+  padding: 2rem 3rem;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 90%;
 }
 
 .text-overlay h1 {
-  font-size: 4rem;
-  margin-bottom: 1rem;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
 }
 
 .text-overlay p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 /* Main Content */
 .content {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 0 1.5rem;
+  padding: 2rem 10%;
+}
+
+section {
+  margin-bottom: 3rem;
 }
 
 h2 {
   font-size: 2rem;
+  color: #111;
   margin-bottom: 1rem;
-  color: #007aff;
 }
 
 p {
   margin-bottom: 1rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
-/* Images */
-.section-image {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin: 1rem 0;
-}
-
-/* Quote Styling */
+/* Quote Box */
 .quote {
-  font-style: italic;
-  background-color: #eef4ff;
+  background-color: #f1f1f1;
+  border-left: 4px solid #999;
   padding: 1rem 1.5rem;
-  border-left: 4px solid #007aff;
-  margin: 2rem 0;
-  clear: both;
+  margin: 1.5rem 0;
+  font-style: italic;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 /* Timeline */
 .timeline {
-  margin: 4rem 0;
-  border-left: 4px solid #007aff;
-  padding-left: 1.5rem;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
 
 .timeline-event {
-  margin-bottom: 2rem;
+  background-color: white;
+  padding: 1rem 1.5rem;
+  border-left: 5px solid #333;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.6s ease-out;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .timeline-event.visible {
@@ -100,47 +97,42 @@ p {
 }
 
 .timeline-event h3 {
-  font-size: 1.3rem;
-  color: #007aff;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
+  color: #444;
 }
 
-/* Footer Section / End Styling */
-section:last-of-type {
-  padding-bottom: 4rem;
-  border-top: 1px solid #ccc;
-  margin-top: 4rem;
+/* Image Styles */
+.section-image {
+  width: 100%;
+  height: auto;
+  margin: 1rem 0;
+  border-radius: 8px;
 }
 
-ul {
-  padding-left: 1.2rem;
-  list-style-type: square;
-}
-
-a {
-  color: #007aff;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #eee;
+  font-size: 0.9rem;
+  color: #555;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .text-overlay h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
   .text-overlay p {
-    font-size: 1.2rem;
+    font-size: 1rem;
+  }
+
+  .content {
+    padding: 1.5rem 5%;
   }
 
   h2 {
-    font-size: 1.5rem;
-  }
-
-  .timeline-event h3 {
-    font-size: 1.1rem;
+    font-size: 1.6rem;
   }
 }
