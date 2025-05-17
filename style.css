@@ -228,14 +228,18 @@ body.dark-mode .timeline-v2::before {
 }
 
 body.dark-mode .timeline-content {
-  background: #192444d9;
+  background: #172235e6;           /* darker background */
   border-left-color: #43d3f8;
-  color: #f0f6fa;
+  color: #e9f6ff;                  /* brighter text */
   box-shadow: 0 2px 22px #005cff18;
 }
 
 body.dark-mode .timeline-content h3 {
   color: #43d3f8;
+}
+
+body.dark-mode .timeline-content p {
+  color: #e9f6ff;                  /* make paragraph text even brighter */
 }
 
 body.dark-mode .timeline-dot {
