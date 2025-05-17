@@ -1,53 +1,46 @@
-/* Updated style.css with dark mode, responsive mobile layout, logo switch, and animated content boxes */
-
+/* Base Setup */
 :root {
-  --background-light: #ffffff;
-  --text-light: #111111;
-  --background-dark: #121212;
-  --text-dark: #f1f1f1;
+  --bg-color: #ffffff;
+  --text-color: #111111;
   --accent-color: #007aff;
-  --card-background-light: #f9f9f9;
-  --card-background-dark: #1e1e1e;
-  --transition-speed: 0.4s;
+  --quote-bg: #f4f4f4;
+  --quote-border: #007aff;
+  --card-bg: #ffffff;
+}
+
+body.dark-mode {
+  --bg-color: #111111;
+  --text-color: #f1f1f1;
+  --accent-color: #3399ff;
+  --quote-bg: #1f1f1f;
+  --quote-border: #3399ff;
+  --card-bg: #1a1a1a;
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  padding: 0;
-  background-color: var(--background-light);
-  color: var(--text-light);
-  transition: background-color var(--transition-speed), color var(--transition-speed);
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
-body.dark {
-  background-color: var(--background-dark);
-  color: var(--text-dark);
-}
-
-header.hero {
+/* Header */
+.hero {
   position: relative;
-  background-image: url('hashima.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
+  background: url('hashima.jpg') no-repeat center center/cover;
+  height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
-}
-
-header.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
 }
 
 .text-overlay {
-  position: relative;
-  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
 }
 
 .text-overlay h1 {
@@ -56,59 +49,71 @@ header.hero::after {
 }
 
 .text-overlay p {
-  font-size: 1.5rem;
-  margin-top: 1rem;
+  font-size: 1.2rem;
 }
 
+/* Navigation */
 nav {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  right: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 10;
+  padding: 1rem 2rem;
+  background-color: var(--bg-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-#logo {
+nav img {
   height: 40px;
-  transition: filter var(--transition-speed);
+  transition: filter 0.3s;
 }
 
-#toggle-dark {
+.dark-mode nav img {
+  filter: brightness(200%);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-color);
+  transition: background-color 0.3s;
+}
+
+/* Dark Mode Button */
+#darkModeToggle {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 2px solid var(--text-color);
   padding: 0.5rem 1rem;
-  border: none;
-  background-color: var(--accent-color);
-  color: white;
   border-radius: 20px;
   cursor: pointer;
-  transition: background-color var(--transition-speed);
+  transition: all 0.3s ease;
 }
 
-#toggle-dark:hover {
-  background-color: #005bb5;
+#darkModeToggle:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
 }
 
-main.content {
-  padding: 2rem;
-  max-width: 1000px;
-  margin: auto;
-}
-
+/* Section Boxes */
 section {
-  background-color: var(--card-background-light);
-  padding: 1.5rem;
+  background-color: var(--card-bg);
+  margin: 2rem auto;
+  padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  margin-bottom: 2rem;
+  max-width: 900px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   opacity: 0;
   transform: translateY(20px);
-  transition: all var(--transition-speed) ease-out;
-}
-
-body.dark section {
-  background-color: var(--card-background-dark);
+  transition: all 0.6s ease-out;
 }
 
 section.visible {
@@ -116,90 +121,80 @@ section.visible {
   transform: translateY(0);
 }
 
+/* Quotes */
 .quote {
-  font-style: italic;
+  border-left: 4px solid var(--quote-border);
+  background-color: var(--quote-bg);
   padding: 1rem;
-  border-left: 4px solid var(--accent-color);
   margin: 1rem 0;
-  background-color: #f0f0f0;
+  font-style: italic;
 }
 
-body.dark .quote {
-  background-color: #2a2a2a;
+/* Timeline */
+.timeline {
+  border-left: 4px solid var(--accent-color);
+  padding-left: 1.5rem;
+  margin-top: 2rem;
 }
 
+.timeline-event {
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.timeline-event.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Image */
 .section-image {
   width: 100%;
   max-width: 700px;
   margin: 1rem 0;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  display: block;
-}
-
-.timeline {
-  border-left: 4px solid var(--accent-color);
-  padding-left: 1rem;
-}
-
-.timeline-event {
-  margin-bottom: 1.5rem;
-}
-
-/* Responsive + Hamburger */
-#menu-toggle {
-  display: none;
-}
-
-.mobile-nav {
-  display: none;
-  flex-direction: column;
-  gap: 1rem;
-  background: var(--card-background-light);
-  padding: 1rem;
-  position: absolute;
-  top: 60px;
-  left: 1rem;
-  right: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-body.dark .mobile-nav {
-  background: var(--card-background-dark);
-}
-
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  #menu-toggle {
-    display: inline-block;
-    background: var(--accent-color);
-    color: white;
-    border: none;
-    padding: 0.4rem 0.8rem;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  .mobile-nav {
-    display: flex;
-  }
 }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: 1rem;
+  padding: 2rem;
+  background-color: var(--card-bg);
+  color: var(--text-color);
   font-size: 0.9rem;
-  background-color: #f4f4f4;
-  color: #666;
 }
 
-body.dark footer {
-  background-color: #1a1a1a;
-  color: #aaa;
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .text-overlay h1 {
+    font-size: 2rem;
+  }
+
+  .text-overlay p {
+    font-size: 1rem;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: var(--bg-color);
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+
+  nav ul.active {
+    display: flex;
+  }
 }
