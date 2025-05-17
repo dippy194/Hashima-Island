@@ -122,6 +122,11 @@ body.dark-mode #nav-menu a:hover {
   z-index: 1;
   pointer-events: none;
 }
+
+body.dark-mode .hero::before {
+  background: linear-gradient(180deg,rgba(14,16,36,0.83) 85%,rgba(16,34,58,0.7) 100%);
+}
+
 .hero h1,
 #hero-title {
   position: relative;
