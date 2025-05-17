@@ -1,190 +1,126 @@
-/* General Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background-color: #fff;
+  background: #f4f4f4;
   color: #111;
-  transition: background-color 0.5s, color 0.5s;
+  transition: background 0.3s, color 0.3s;
 }
 
-.dark-mode {
-  background-color: #111;
-  color: #f1f1f1;
-}
-
-h1, h2 {
+.hero {
+  background: url('hashima.jpg') no-repeat center center/cover;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   text-align: center;
 }
 
-a {
-  color: #2f8efc;
-  text-decoration: none;
+.hero h1 {
+  color: white;
+  font-size: 3rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
 }
 
-p {
-  line-height: 1.6;
-  padding: 0 20px;
-  max-width: 900px;
-  margin: auto;
-}
-
-/* Dark Mode Button */
 .toggle-btn {
   position: absolute;
-  top: 20px;
+  top: 75vh;
   left: 20px;
-  background: none;
+  font-size: 1.5rem;
   border: none;
-  font-size: 24px;
+  background: black;
+  color: white;
+  padding: 0.5rem;
   cursor: pointer;
-  z-index: 1000;
-  color: #333;
+  border-radius: 50%;
   transition: transform 0.5s ease;
+  z-index: 999;
 }
 
-.dark-mode .toggle-btn {
-  color: #fff;
+.toggle-btn.sun {
+  transform: rotate(180deg);
 }
 
-.toggle-btn.rotate {
-  transform: rotate(360deg);
-}
-
-/* Hero Section */
-.hero {
-  background: url('hashima.jpg') no-repeat center center/cover;
-  height: 60vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.hero h1 {
-  font-size: 3.5rem;
-  color: #fff;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-}
-
-/* Section Boxes */
 .content-box {
-  background: #f9f9f9;
-  margin: 40px auto;
-  padding: 30px 20px;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 900px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, opacity 0.5s;
+  background: white;
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  border-left: 5px solid #1e90ff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s forwards;
 }
 
-.dark-mode .content-box {
-  background: #222;
-  color: #fff;
+.content-box h2 {
+  color: #1e90ff;
 }
 
-.content-box img {
+.content-box img.center-img {
   display: block;
-  margin: 20px auto;
+  margin: 2rem auto;
   max-width: 100%;
-  height: auto;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 blockquote {
-  border-left: 4px solid #2f8efc;
-  margin: 20px;
-  padding-left: 15px;
+  margin: 1rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid #1e90ff;
+  color: #555;
   font-style: italic;
-  color: #444;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #1e90ff;
+  color: white;
+  margin-top: 3rem;
+}
+
+.dark-mode {
+  background: #121212;
+  color: #eee;
+}
+
+.dark-mode .content-box {
+  background: #1e1e1e;
+  border-left-color: #3399ff;
 }
 
 .dark-mode blockquote {
-  color: #ccc;
-  border-left-color: #5caaff;
-}
-
-/* Timeline Styles */
-.timeline-section {
-  padding: 40px 20px;
+  border-left-color: #3399ff;
 }
 
 .timeline {
-  position: relative;
-  max-width: 800px;
-  margin: auto;
-  padding-left: 20px;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 20px;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: #2f8efc;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .timeline-item {
   position: relative;
-  padding: 20px 0 20px 40px;
-  margin-bottom: 20px;
-}
-
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: 10px;
-  top: 20px;
-  width: 16px;
-  height: 16px;
-  background-color: #2f8efc;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  z-index: 1;
+  padding-left: 3rem;
+  font-size: 1.1rem;
 }
 
 .timeline-item span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #1e90ff;
+  color: white;
+  padding: 0.3rem 0.7rem;
+  border-radius: 5px;
   font-weight: bold;
-  display: block;
-  color: #2f8efc;
-  margin-bottom: 5px;
 }
 
-.dark-mode .timeline::before {
-  background: #5caaff;
-}
-
-.dark-mode .timeline-item::before {
-  background: #5caaff;
-  border-color: #111;
-}
-
-.dark-mode .timeline-item span {
-  color: #5caaff;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #555;
-  font-size: 0.9rem;
-}
-
-.dark-mode footer {
-  color: #aaa;
-}
-
-/* Scroll Animation (Optional Fade In) */
-.content-box {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeInUp 1s ease forwards;
-  animation-delay: 0.2s;
-}
-
+/* Animate on scroll effect */
 @keyframes fadeInUp {
   to {
     opacity: 1;
