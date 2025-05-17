@@ -189,17 +189,7 @@ body.dark-mode .dark-mode-toggle {
   position: relative;
   transition: background 0.3s;
 }
-.author-avatar {
-  width: 39px;
-  height: 39px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2.4px solid #007BFF;
-  background: #e6f4ff;
-  box-shadow: 0 2px 8px #007bff11;
-  margin-right: 0.3rem;
-  transition: border-color 0.3s;
-}
+
 .author-name {
   color: #fff;
   background: linear-gradient(90deg, #007bff 30%, #5ecfff 100%);
@@ -218,18 +208,9 @@ body.dark-mode .author-bit-simple {
   background: rgba(22,38,69,0.45);
   box-shadow: 0 4px 18px #43d3f81c;
 }
-body.dark-mode .author-avatar {
-  border-color: #43d3f8;
-  background: #162039;
-}
 body.dark-mode .author-name {
   background: linear-gradient(90deg, #43d3f8 10%, #223ea3 100%);
   color: #f3fbff;
-}
-.author-avatar:hover {
-  box-shadow: 0 0 0 4px #5ecfff60;
-  border-color: #007bff;
-  transform: scale(1.05);
 }
 
 /* Content container */
