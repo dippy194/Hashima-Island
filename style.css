@@ -110,7 +110,22 @@ body.dark-mode #nav-menu a:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-  filter: brightness(0.75); /* Slightly darken image for text visibility */
+  /* Remove the old filter property */
+  /* filter: brightness(0.75); */
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg,rgba(12,18,36,0.72) 70%,rgba(14,34,55,0.62) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+.hero h1,
+#hero-title {
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1 {
