@@ -178,6 +178,15 @@ a:hover {
   text-decoration: underline;
 }
 
+  .hero .author {
+  font-size: 1.2rem;
+  color: #f0f0f0;
+  background: rgba(0, 0, 0, 0.4);
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .hero h1 {
