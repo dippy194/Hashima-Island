@@ -1,115 +1,193 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hashima Island Project</title>
-  <link rel="stylesheet" href="style.css" />
-  <script>
-    function toggleDarkMode(btn) {
-      document.body.classList.toggle('dark-mode');
-      btn.classList.toggle('rotate');
-      btn.innerHTML = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-    }
-  </script>
-</head>
-<body>
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #fff;
+  color: #111;
+  transition: background-color 0.5s, color 0.5s;
+}
 
-  <button class="toggle-btn" onclick="toggleDarkMode(this)">🌙</button>
+.dark-mode {
+  background-color: #111;
+  color: #f1f1f1;
+}
 
-  <section class="hero">
-    <h1>Hashima Island</h1>
-  </section>
+h1, h2 {
+  text-align: center;
+}
 
-  <section class="content-box">
-    <h2>Overview</h2>
-    <p>
-      Hashima Island, also known as Gunkanjima or "Battleship Island", is a tiny abandoned island located off the coast of Nagasaki, Japan. 
-      Once a thriving coal mining facility, it became a symbol of Japan’s rapid industrialization. 
-      The island was later abandoned in 1974 when coal reserves depleted.
-    </p>
-  </section>
+a {
+  color: #2f8efc;
+  text-decoration: none;
+}
 
-  <section class="content-box">
-    <h2>Historical Significance</h2>
-    <p>
-      The Mitsubishi Corporation purchased the island in 1890 and developed it into a coal mining facility. 
-      At its peak in 1959, over 5,000 residents lived on the island, making it one of the most densely populated places in the world at the time.
-    </p>
-    <blockquote>
-      "It was the land of no return." — Former Korean forced laborer
-    </blockquote>
-  </section>
+p {
+  line-height: 1.6;
+  padding: 0 20px;
+  max-width: 900px;
+  margin: auto;
+}
 
-  <section class="content-box">
-    <h2>Forced Labor During WWII</h2>
-    <p>
-      During World War II, Korean and Chinese laborers were forcibly brought to Hashima to work under extremely harsh conditions. 
-      Many survivors have shared accounts of the brutal treatment and inhumane conditions they endured.
-    </p>
-    <img src="korea.jpg" alt="Korean survivors" />
-    <blockquote>
-      “We were treated worse than animals.” — Korean survivor interviewed by Yonhap News
-    </blockquote>
-  </section>
+/* Dark Mode Button */
+.toggle-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+  color: #333;
+  transition: transform 0.5s ease;
+}
 
-  <section class="content-box">
-    <h2>Modern Recognition</h2>
-    <p>
-      In 2015, Hashima was recognized as a UNESCO World Heritage site as part of Japan’s “Sites of Japan’s Meiji Industrial Revolution.” 
-      However, the designation was met with controversy due to Japan’s failure to fully acknowledge the forced labor history.
-    </p>
-    <blockquote>
-      “Acknowledging history is the first step toward healing.” — UNESCO Representative
-    </blockquote>
-  </section>
+.dark-mode .toggle-btn {
+  color: #fff;
+}
 
-  <section class="content-box timeline-section">
-    <h2>Timeline</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <span>1890</span>
-        Mitsubishi purchases Hashima and begins mining operations.
-      </div>
-      <div class="timeline-item">
-        <span>1916</span>
-        Japan’s first large reinforced concrete building constructed on the island.
-      </div>
-      <div class="timeline-item">
-        <span>1940s</span>
-        Korean and Chinese forced laborers brought during World War II.
-      </div>
-      <div class="timeline-item">
-        <span>1959</span>
-        Population peaks at 5,259, one of the highest densities in the world.
-      </div>
-      <div class="timeline-item">
-        <span>1974</span>
-        Mitsubishi closes the mine and the island is abandoned.
-      </div>
-      <div class="timeline-item">
-        <span>2009</span>
-        Hashima reopens to tourism with limited access.
-      </div>
-      <div class="timeline-item">
-        <span>2015</span>
-        Designated a UNESCO World Heritage site.
-      </div>
-    </div>
-  </section>
+.toggle-btn.rotate {
+  transform: rotate(360deg);
+}
 
-  <section class="content-box">
-    <h2>Sources</h2>
-    <p>
-      • Japan National Tourism Organization – Hashima Island History <br/>
-      • Yonhap News – Survivor Interviews and Reports on Forced Labor <br/>
-      • UNESCO – Meiji Industrial Revolution Listings
-    </p>
-  </section>
+/* Hero Section */
+.hero {
+  background: url('hashima.jpg') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
 
-  <footer>
-    &copy; 2025 Hashima Island Project. All rights reserved.
-  </footer>
+.hero h1 {
+  font-size: 3.5rem;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
 
-</body>
-</html>
+/* Section Boxes */
+.content-box {
+  background: #f9f9f9;
+  margin: 40px auto;
+  padding: 30px 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 900px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, opacity 0.5s;
+}
+
+.dark-mode .content-box {
+  background: #222;
+  color: #fff;
+}
+
+.content-box img {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+blockquote {
+  border-left: 4px solid #2f8efc;
+  margin: 20px;
+  padding-left: 15px;
+  font-style: italic;
+  color: #444;
+}
+
+.dark-mode blockquote {
+  color: #ccc;
+  border-left-color: #5caaff;
+}
+
+/* Timeline Styles */
+.timeline-section {
+  padding: 40px 20px;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+  padding-left: 20px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #2f8efc;
+}
+
+.timeline-item {
+  position: relative;
+  padding: 20px 0 20px 40px;
+  margin-bottom: 20px;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 20px;
+  width: 16px;
+  height: 16px;
+  background-color: #2f8efc;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  z-index: 1;
+}
+
+.timeline-item span {
+  font-weight: bold;
+  display: block;
+  color: #2f8efc;
+  margin-bottom: 5px;
+}
+
+.dark-mode .timeline::before {
+  background: #5caaff;
+}
+
+.dark-mode .timeline-item::before {
+  background: #5caaff;
+  border-color: #111;
+}
+
+.dark-mode .timeline-item span {
+  color: #5caaff;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.dark-mode footer {
+  color: #aaa;
+}
+
+/* Scroll Animation (Optional Fade In) */
+.content-box {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
