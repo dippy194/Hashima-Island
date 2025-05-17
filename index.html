@@ -5,111 +5,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hashima Island Project</title>
   <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
+  <header class="hero">
+    <h1 class="hero-title">Hashima Island</h1>
+    <button id="modeToggle" class="mode-toggle" aria-label="Toggle Dark Mode">
+      <span id="modeIcon" class="mode-icon">🌙</span>
+    </button>
+  </header>
 
-  <section class="hero">
-    <h1>Hashima Island</h1>
-  </section>
+  <main>
+    <section class="content-box">
+      <h2>Introduction</h2>
+      <p>Hashima Island, also known as Gunkanjima or "Battleship Island," is a small abandoned island located off the coast of Nagasaki, Japan. It was once a thriving coal mining facility operated by Mitsubishi and home to thousands of workers and their families.</p>
+      <blockquote>"At its peak, the island's population density was among the highest in the world." — Japan National Tourism Organization</blockquote>
+    </section>
 
-  <button class="toggle-btn" onclick="toggleDarkMode(this)">🌙</button>
+    <section class="content-box">
+      <h2>Rise and Development</h2>
+      <p>In 1890, Mitsubishi bought the island and began extracting undersea coal. The company built massive concrete apartment complexes to house workers. By 1959, over 5,000 people lived on the tiny island, creating an extremely dense community with schools, shops, and a hospital.</p>
+    </section>
 
-  <section class="content-box">
-    <h2>Overview</h2>
-    <p>
-      Hashima Island, also known as Gunkanjima or "Battleship Island", is a tiny abandoned island located off the coast of Nagasaki, Japan. Once a thriving coal mining facility, it became a symbol of Japan’s rapid industrialization. The island was later abandoned in 1974 when coal reserves depleted.
-    </p>
-  </section>
+    <section class="content-box">
+      <h2>Forced Labor</h2>
+      <p>During World War II, Koreans and Chinese were brought to Hashima to work in brutal conditions. Many suffered from dangerous work, malnutrition, and abuse. These stories remain a controversial part of Japan’s wartime history.</p>
+      <img src="korea.jpg" alt="Korean laborers memorial" class="centered-image">
+      <blockquote>"We were forced to work long hours in the mines without proper food or rest." — Korean survivor testimony, Yonhap News</blockquote>
+    </section>
 
-  <section class="content-box">
-    <h2>Historical Significance</h2>
-    <p>
-      The Mitsubishi Corporation purchased the island in 1890 and developed it into a coal mining facility. At its peak in 1959, over 5,000 residents lived on the island, making it one of the most densely populated places in the world at the time.
-    </p>
-    <blockquote>
-      "It was the land of no return." — Former Korean forced laborer
-    </blockquote>
-  </section>
+    <section class="content-box">
+      <h2>Decline and Abandonment</h2>
+      <p>In 1974, coal demand fell and the mine closed. The island was quickly abandoned. Buildings were left untouched, and Hashima became a ghost island preserved in time.</p>
+    </section>
 
-  <section class="content-box">
-    <h2>Forced Labor During WWII</h2>
-    <p>
-      During World War II, Korean and Chinese laborers were forcibly brought to Hashima to work under extremely harsh conditions. Many survivors have shared accounts of the brutal treatment and inhumane conditions they endured.
-    </p>
-    <img src="korea.jpg" alt="Korean survivors" class="center-img"/>
-    <blockquote>
-      “We were treated worse than animals.” — Korean survivor interviewed by Yonhap News
-    </blockquote>
-  </section>
+    <section class="content-box">
+      <h2>Modern Significance</h2>
+      <p>Hashima reopened for tourism in 2009 and became a UNESCO World Heritage Site in 2015. However, it remains controversial due to the lack of acknowledgment of forced labor during WWII.</p>
+      <blockquote>"The silence surrounding wartime laborers casts a shadow over its heritage status." — Yonhap News</blockquote>
+    </section>
 
-  <section class="content-box">
-    <h2>Modern Recognition</h2>
-    <p>
-      In 2015, Hashima was recognized as a UNESCO World Heritage site as part of Japan’s “Sites of Japan’s Meiji Industrial Revolution.” However, the designation was met with controversy due to Japan’s failure to fully acknowledge the forced labor history.
-    </p>
-    <blockquote>
-      “Acknowledging history is the first step toward healing.” — UNESCO Representative
-    </blockquote>
-  </section>
-
- <section class="content-box timeline-section">
-  <h2>Timeline</h2>
-  <div class="timeline">
-    <div class="timeline-item left">
-      <div class="content">
-        <h3>1890</h3>
-        <p>Mitsubishi purchases Hashima and begins mining operations.</p>
+    <section class="content-box timeline-section">
+      <h2>Timeline</h2>
+      <div class="timeline">
+        <div class="timeline-event left">
+          <div class="timeline-content">
+            <h3>1890</h3>
+            <p>Mitsubishi purchases the island and begins coal mining operations.</p>
+          </div>
+        </div>
+        <div class="timeline-event right">
+          <div class="timeline-content">
+            <h3>1916</h3>
+            <p>First large reinforced concrete building in Japan constructed to withstand typhoons.</p>
+          </div>
+        </div>
+        <div class="timeline-event left">
+          <div class="timeline-content">
+            <h3>1940s</h3>
+            <p>Korean and Chinese laborers forced to work under inhumane conditions during WWII.</p>
+          </div>
+        </div>
+        <div class="timeline-event right">
+          <div class="timeline-content">
+            <h3>1959</h3>
+            <p>Population peaks at 5,259; one of the most densely populated places on Earth.</p>
+          </div>
+        </div>
+        <div class="timeline-event left">
+          <div class="timeline-content">
+            <h3>1974</h3>
+            <p>Coal mines shut down; island is abandoned almost overnight.</p>
+          </div>
+        </div>
+        <div class="timeline-event right">
+          <div class="timeline-content">
+            <h3>2009</h3>
+            <p>Island reopens to the public for guided tourism.</p>
+          </div>
+        </div>
+        <div class="timeline-event left">
+          <div class="timeline-content">
+            <h3>2015</h3>
+            <p>Hashima is added to UNESCO World Heritage list, sparking international criticism over ignored forced labor history.</p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="timeline-item right">
-      <div class="content">
-        <h3>1916</h3>
-        <p>Japan’s first large reinforced concrete building is constructed on the island.</p>
-      </div>
-    </div>
-    <div class="timeline-item left">
-      <div class="content">
-        <h3>1940s</h3>
-        <p>Korean and Chinese forced laborers are brought to the island during WWII.</p>
-      </div>
-    </div>
-    <div class="timeline-item right">
-      <div class="content">
-        <h3>1959</h3>
-        <p>Population peaks at 5,259, making it one of the most densely populated places on Earth.</p>
-      </div>
-    </div>
-    <div class="timeline-item left">
-      <div class="content">
-        <h3>1974</h3>
-        <p>The coal mine is closed and the island is completely abandoned.</p>
-      </div>
-    </div>
-    <div class="timeline-item right">
-      <div class="content">
-        <h3>2009</h3>
-        <p>The island reopens for limited tourism access.</p>
-      </div>
-    </div>
-    <div class="timeline-item left">
-      <div class="content">
-        <h3>2015</h3>
-        <p>Hashima becomes a UNESCO World Heritage site, though controversy surrounds Japan’s handling of forced labor history.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-  <footer>
-    &copy; 2025 Hashima Island Project. All rights reserved.
-  </footer>
-
-  <script>
-    function toggleDarkMode(btn) {
-      document.body.classList.toggle('dark-mode');
-      btn.classList.toggle('sun');
-      btn.innerText = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-    }
-  </script>
+    <footer class="footer">
+      <p>Sources: Japan National Tourism Organization, Yonhap News</p>
+      <p>© 2025 Hashima Island Project. All rights reserved.</p>
+    </footer>
+  </main>
 </body>
 </html>
