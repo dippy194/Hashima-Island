@@ -143,7 +143,16 @@
   <button id="back-to-top" title="Back to top">↑</button>
 
   <script>
-  // Hamburger Menu Toggle
+  // Auto-enable dark mode if user's system prefers it, unless they already picked a mode
+if (
+  !localStorage.getItem('darkMode') &&
+  window.matchMedia &&
+  window.matchMedia('(prefers-color-scheme: dark)').matches
+) {
+  document.body.classList.add('dark-mode');
+}  
+    
+    // Hamburger Menu Toggle
   const navToggle = document.getElementById('nav-toggle');
   const navMenu = document.getElementById('nav-menu');
   if (navToggle && navMenu) {
