@@ -125,7 +125,7 @@ img {
 /* Timeline */
 .timeline {
   position: relative;
-  padding-left: 40px; /* increased from 20px */
+  padding-left: 50px; /* more space for dots and years */
   border-left: 3px solid #007BFF;
   margin-left: 10px;
 }
@@ -133,13 +133,12 @@ img {
 .timeline-item {
   position: relative;
   margin-bottom: 2rem;
-  padding-left: 10px; /* keeps text offset from the dot */
 }
 
 .timeline-item .dot {
   position: absolute;
-  left: -11px; /* original value was okay if adjusted with padding */
-  top: 5px;
+  left: -23px; /* moved dot further left */
+  top: 6px;
   background: #007BFF;
   border: 3px solid white;
   width: 16px;
@@ -152,7 +151,7 @@ img {
   margin: 0;
   font-size: 1.3rem;
   color: #007BFF;
-  padding-left: 10px; /* ensures the date is shifted right */
+  padding-left: 8px; /* slight offset for better visual spacing */
 }
 
 /* Footer */
