@@ -1,67 +1,56 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
-
 body {
-  background-color: #000;
-  color: #fff;
-  line-height: 1.6;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #111;
+  background-color: #fff;
 }
 
-/* Hero section */
 .hero {
   position: relative;
   height: 100vh;
-  overflow: hidden;
-}
-
-.hero-image-container {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.hero-image {
-  width: 100%;
-  height: auto;
-  max-height: 100vh;
-  object-fit: cover;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-  will-change: transform, opacity;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  color: white;
+  background-image: url('hashimalsland_pixta_93120766_M.jpg.webp');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  top: 40%;
+  color: white;
 }
 
-.hero h1 {
-  font-size: 4rem;
-  font-weight: 600;
+.text-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 1rem;
 }
 
-.hero p {
-  font-size: 1.5rem;
-  margin-top: 1rem;
-  opacity: 0.8;
-}
-
-/* Section */
-.section {
-  padding: 4rem 2rem;
-  max-width: 800px;
+.content {
+  padding: 3rem 10%;
+  max-width: 900px;
   margin: auto;
 }
 
-.dark {
-  background-color: #111;
+h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+h2 {
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+a {
+  color: #007aff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
