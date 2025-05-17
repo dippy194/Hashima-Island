@@ -81,7 +81,12 @@ body.dark-mode #nav-menu a:hover {
   background: #223ea3;
   color: #fff;
 }
+/* --- Mobile Hamburger Placement Fix --- */
 @media (max-width: 950px) {
+  .site-nav {
+    top: 70px;   /* Push hamburger down below dark mode toggle */
+    left: 20px;  /* Align with dark mode toggle */
+  }
   #nav-toggle {
     display: block;
   }
@@ -121,6 +126,16 @@ body.dark-mode #nav-menu a:hover {
 #hero-title {
   transition: transform 0.3s cubic-bezier(.55,.06,.68,.19);
   will-change: transform;
+  background: linear-gradient(90deg, #5ecfff, #007bff, #66dfff, #5ecfff);
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 2.5s linear infinite;
+  -webkit-text-fill-color: transparent; /* For Safari */
+}
+@keyframes shine {
+  to { background-position: 200% center; }
 }
 
 /* Dark mode toggle */
@@ -136,7 +151,7 @@ body.dark-mode #nav-menu a:hover {
   border-radius: 30px;
   cursor: pointer;
   transition: background 0.3s, color 0.3s;
-  z-index: 1000;
+  z-index: 1201; /* Make sure it's on top of nav */
 }
 body.dark-mode .dark-mode-toggle {
   background: #fff;
@@ -462,17 +477,4 @@ body.dark-mode .author-name {
 body.dark-mode #back-to-top {
   background: #43d3f8;
   color: #10141a;
-}
-
-#hero-title {
-  background: linear-gradient(90deg, #5ecfff, #007bff, #66dfff, #5ecfff);
-  background-size: 200%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: shine 2.5s linear infinite;
-  -webkit-text-fill-color: transparent; /* For Safari */
-}
-@keyframes shine {
-  to { background-position: 200% center; }
 }
