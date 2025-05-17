@@ -1,188 +1,98 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Apple-style font and soft gradient background */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
-  background: linear-gradient(to bottom, #f9f9f9, #e9ecf0);
-  color: #1c1c1e;
-  line-height: 1.7;
-  font-size: 17px;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
 }
 
-/* Hero Section */
 .hero {
-  background-image: url('hashima.jpg');
-  background-size: cover;
-  background-position: center;
+  position: relative;
+  background: url('hashima.jpg') center/cover no-repeat;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  text-align: center;
+  overflow: hidden;
 }
 
 .text-overlay {
-  background: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 12px;
   color: white;
-  padding: 2rem 3rem;
-  border-radius: 16px;
-  text-align: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  max-width: 90%;
 }
 
 .text-overlay h1 {
-  font-size: 3.5rem;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
+  font-size: 3rem;
+  margin: 0 0 0.5rem;
 }
 
 .text-overlay p {
-  font-size: 1.3rem;
-  font-weight: 300;
+  font-size: 1.2rem;
+  margin: 0;
 }
 
-/* Main Content */
-main.content {
-  padding: 4rem 5%;
-  max-width: 1200px;
+.content {
+  max-width: 1000px;
   margin: 0 auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
 }
 
-/* Section Styling */
 section {
-  background: white;
-  padding: 2.5rem 2rem;
   margin-bottom: 3rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease;
 }
 
-section:hover {
-  transform: translateY(-4px);
+h2 {
+  font-size: 2rem;
+  margin-top: 1rem;
 }
 
-section h2 {
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-  color: #007aff;
-  border-left: 5px solid #007aff;
-  padding-left: 1rem;
-}
-
-/* Paragraphs */
-section p {
-  margin-bottom: 1rem;
-}
-
-/* Quotes */
-.quote {
-  font-style: italic;
-  background-color: #eef1f5;
-  padding: 1rem 1.5rem;
-  border-left: 5px solid #007aff;
-  margin: 2rem 0;
+.section-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
   border-radius: 8px;
 }
 
-/* Timeline Styles */
-.timeline {
+.quote {
+  font-style: italic;
+  background-color: #eef;
+  padding: 1rem;
+  border-left: 5px solid #88c;
   margin-top: 1rem;
-  padding-left: 1rem;
-  border-left: 3px solid #007aff;
-}
-
-.timeline h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: #007aff;
-}
-
-.timeline p {
-  margin-bottom: 1.5rem;
-}
-
-/* Images */
-.section-image {
-  display: block;
-  width: 100%;
-  max-width: 750px;
-  margin: 2rem auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
-
-/* Links */
-a {
-  color: #007aff;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-/* Footer-like Final Section */
-footer {
-  padding: 3rem 2rem;
-  background: #202124;
-  color: #f5f5f7;
-  text-align: center;
-  border-top: 5px solid #007aff;
-}
-
-footer h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #fff;
-}
-
-footer ul {
-  list-style: none;
-  padding: 0;
   margin-bottom: 1rem;
 }
 
-footer li {
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.timeline-event {
+  background: #e0e0e0;
+  padding: 1rem;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.timeline-event.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+ul li {
   margin-bottom: 0.5rem;
-  font-size: 0.95rem;
-}
-
-footer a {
-  color: #90cdf4;
-  font-weight: 500;
-}
-
-/* Divider Elements (Optional Decorative) */
-.divider {
-  height: 1px;
-  background-color: #d0d3d8;
-  margin: 3rem 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .text-overlay {
-    padding: 1.5rem;
-  }
-
-  .text-overlay h1 {
-    font-size: 2.5rem;
-  }
-
-  .text-overlay p {
-    font-size: 1rem;
-  }
-
-  section h2 {
-    font-size: 1.7rem;
-  }
-
-  body {
-    font-size: 16px;
-  }
 }
