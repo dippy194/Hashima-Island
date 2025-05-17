@@ -1,165 +1,114 @@
 :root {
-  --primary: #007aff;
   --bg: #ffffff;
-  --text: #111;
-  --card-bg: #f5f5f5;
+  --text: #000000;
+  --primary: #007aff;
+  --box-bg: #f0f0f0;
+  --quote-bg: rgba(0, 122, 255, 0.1);
 }
 
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
   background: var(--bg);
   color: var(--text);
-  transition: background 0.3s, color 0.3s;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  transition: 0.3s;
 }
 
 .dark-mode {
   --bg: #111;
   --text: #f0f0f0;
-  --card-bg: #1e1e1e;
+  --box-bg: #1a1a1a;
+  --quote-bg: rgba(255, 255, 255, 0.05);
 }
 
 .hero {
-  background: url("hashima.jpg") no-repeat center center/cover;
-  height: 400px;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  height: 400px;
+  background: black;
+  overflow: hidden;
 }
 
-.logo {
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.hero-text {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
-  width: 60px;
-  transition: 0.3s ease;
+  bottom: 20px;
+  left: 30px;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px 30px;
+  border-radius: 12px;
 }
 
-.text-overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
+.toggle-container {
   padding: 1rem 2rem;
-  border-radius: 10px;
+  margin-top: -40px;
 }
 
-h1 {
-  margin: 0;
-  font-size: 2.5rem;
+#darkModeToggle {
+  padding: 0.6rem 1.2rem;
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dark-mode #darkModeToggle {
+  background-color: white;
+  color: black;
+  border-color: black;
+}
+
+.content {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.section-box {
+  background: var(--box-bg);
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  border-left: 8px solid var(--primary);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 h2 {
   color: var(--primary);
-  margin-top: 1rem;
-}
-
-.content {
-  padding: 2rem 1rem;
-}
-
-.section-box {
-  background: var(--card-bg);
-  padding: 1.5rem;
-  margin: 1.5rem auto;
-  max-width: 800px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease-out;
-}
-
-.section-box.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.section-image {
-  width: 100%;
-  border-radius: 12px;
-  margin-top: 1rem;
-}
-
-.timeline {
-  border-left: 4px solid var(--primary);
-  padding-left: 1.5rem;
-}
-
-.timeline-event {
-  margin-bottom: 1rem;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease;
-}
-
-.timeline-event.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .quote {
-  background: var(--bg);
-  border-left: 4px solid var(--primary);
+  background: var(--quote-bg);
   padding: 1rem;
-  margin: 1rem 0;
+  margin-top: 1rem;
+  border-left: 4px solid var(--primary);
   font-style: italic;
-  background-color: rgba(0, 122, 255, 0.1);
   border-radius: 6px;
 }
 
-ul {
-  padding-left: 1.5rem;
+.timeline {
+  margin-top: 1rem;
+  padding-left: 1rem;
+  border-left: 4px solid var(--primary);
+}
+
+.timeline-item {
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 1rem;
 }
 
 footer {
   text-align: center;
-  padding: 2rem 1rem;
-  background-color: var(--card-bg);
-}
-
-.dark-toggle {
-  position: relative;
-  padding: 1rem;
-  text-align: left;
-  margin-left: 1rem;
-}
-
-#darkModeToggle {
-  background: none;
-  border: 2px solid #333;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  cursor: pointer;
-  background-color: white;
-  color: black;
-  border-radius: 8px;
-}
-
-.dark-mode #darkModeToggle {
-  background-color: black;
-  color: white;
-  border-color: white;
-}
-
-@media screen and (max-width: 768px) {
-  .hero {
-    height: 300px;
-  }
-
-  .text-overlay h1 {
-    font-size: 2rem;
-  }
-
-  .section-box {
-    margin: 1rem 1rem;
-  }
-
-  .logo {
-    width: 50px;
-  }
-
-  #darkModeToggle {
-    font-size: 0.9rem;
-  }
+  padding: 2rem;
+  background-color: var(--box-bg);
+  color: var(--text);
 }
