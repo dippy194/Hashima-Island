@@ -37,6 +37,11 @@ body.dark-mode {
   max-width: 90%;
 }
 
+#hero-title {
+  transition: transform 0.3s cubic-bezier(.55,.06,.68,.19);
+  will-change: transform;
+}
+
 /* Dark mode toggle */
 .dark-mode-toggle {
   position: fixed;
