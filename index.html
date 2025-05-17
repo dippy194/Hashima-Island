@@ -29,8 +29,10 @@
     <h1 id="hero-title">Hashima Island – The Lost Ghost Island of Japan</h1>
   </header>
 
-  <!-- Author Bit -->
+  <!-- Author Bit with Avatar -->
   <div class="author-bit-simple">
+    <!-- Use lucas.jpg or a placeholder image if you don't have a photo yet -->
+    <img src="lucas.jpg" alt="Lucas Aladag avatar" class="author-avatar" />
     <span class="author-name">By Lucas Aladag</span>
   </div>
 
@@ -144,15 +146,15 @@
 
   <script>
   // Auto-enable dark mode if user's system prefers it, unless they already picked a mode
-if (
-  !localStorage.getItem('darkMode') &&
-  window.matchMedia &&
-  window.matchMedia('(prefers-color-scheme: dark)').matches
-) {
-  document.body.classList.add('dark-mode');
-}  
+  if (
+    !localStorage.getItem('darkMode') &&
+    window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+  ) {
+    document.body.classList.add('dark-mode');
+  }  
     
-    // Hamburger Menu Toggle
+  // Hamburger Menu Toggle
   const navToggle = document.getElementById('nav-toggle');
   const navMenu = document.getElementById('nav-menu');
   if (navToggle && navMenu) {
