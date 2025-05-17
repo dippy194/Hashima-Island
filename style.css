@@ -1,145 +1,115 @@
-/* Reset and font */
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #fff;
-  color: #111;
-  transition: background 0.4s, color 0.4s;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hashima Island Project</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    function toggleDarkMode(btn) {
+      document.body.classList.toggle('dark-mode');
+      btn.classList.toggle('rotate');
+      btn.innerHTML = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    }
+  </script>
+</head>
+<body>
 
-.dark-mode {
-  background: #000;
-  color: #fff;
-}
+  <button class="toggle-btn" onclick="toggleDarkMode(this)">🌙</button>
 
-/* Hero section */
-.hero {
-  background: url('hashima.jpg') no-repeat center center/cover;
-  height: 75vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  text-align: center;
-  padding: 0 20px;
-}
+  <section class="hero">
+    <h1>Hashima Island</h1>
+  </section>
 
-.hero h1 {
-  font-size: 4rem;
-  color: white;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-}
+  <section class="content-box">
+    <h2>Overview</h2>
+    <p>
+      Hashima Island, also known as Gunkanjima or "Battleship Island", is a tiny abandoned island located off the coast of Nagasaki, Japan. 
+      Once a thriving coal mining facility, it became a symbol of Japan’s rapid industrialization. 
+      The island was later abandoned in 1974 when coal reserves depleted.
+    </p>
+  </section>
 
-/* Toggle Button */
-#darkModeToggle {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  padding: 10px 14px;
-  font-size: 20px;
-  background: black;
-  color: white;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  z-index: 1000;
-  transition: background 0.3s, transform 0.4s ease;
-}
+  <section class="content-box">
+    <h2>Historical Significance</h2>
+    <p>
+      The Mitsubishi Corporation purchased the island in 1890 and developed it into a coal mining facility. 
+      At its peak in 1959, over 5,000 residents lived on the island, making it one of the most densely populated places in the world at the time.
+    </p>
+    <blockquote>
+      "It was the land of no return." — Former Korean forced laborer
+    </blockquote>
+  </section>
 
-#darkModeToggle:hover {
-  background: #333;
-}
+  <section class="content-box">
+    <h2>Forced Labor During WWII</h2>
+    <p>
+      During World War II, Korean and Chinese laborers were forcibly brought to Hashima to work under extremely harsh conditions. 
+      Many survivors have shared accounts of the brutal treatment and inhumane conditions they endured.
+    </p>
+    <img src="korea.jpg" alt="Korean survivors" />
+    <blockquote>
+      “We were treated worse than animals.” — Korean survivor interviewed by Yonhap News
+    </blockquote>
+  </section>
 
-#darkModeToggle.rotate {
-  transform: rotate(180deg);
-}
+  <section class="content-box">
+    <h2>Modern Recognition</h2>
+    <p>
+      In 2015, Hashima was recognized as a UNESCO World Heritage site as part of Japan’s “Sites of Japan’s Meiji Industrial Revolution.” 
+      However, the designation was met with controversy due to Japan’s failure to fully acknowledge the forced labor history.
+    </p>
+    <blockquote>
+      “Acknowledging history is the first step toward healing.” — UNESCO Representative
+    </blockquote>
+  </section>
 
-/* Content Boxes */
-.content-box {
-  margin: 60px auto;
-  padding: 40px;
-  max-width: 900px;
-  border-left: 6px solid #3399ff;
-  background: #f7f7f7;
-  border-radius: 10px;
-  transition: transform 0.4s ease, background 0.3s;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
+  <section class="content-box timeline-section">
+    <h2>Timeline</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <span>1890</span>
+        Mitsubishi purchases Hashima and begins mining operations.
+      </div>
+      <div class="timeline-item">
+        <span>1916</span>
+        Japan’s first large reinforced concrete building constructed on the island.
+      </div>
+      <div class="timeline-item">
+        <span>1940s</span>
+        Korean and Chinese forced laborers brought during World War II.
+      </div>
+      <div class="timeline-item">
+        <span>1959</span>
+        Population peaks at 5,259, one of the highest densities in the world.
+      </div>
+      <div class="timeline-item">
+        <span>1974</span>
+        Mitsubishi closes the mine and the island is abandoned.
+      </div>
+      <div class="timeline-item">
+        <span>2009</span>
+        Hashima reopens to tourism with limited access.
+      </div>
+      <div class="timeline-item">
+        <span>2015</span>
+        Designated a UNESCO World Heritage site.
+      </div>
+    </div>
+  </section>
 
-.dark-mode .content-box {
-  background: #1c1c1c;
-  border-left: 6px solid #3399ff;
-}
+  <section class="content-box">
+    <h2>Sources</h2>
+    <p>
+      • Japan National Tourism Organization – Hashima Island History <br/>
+      • Yonhap News – Survivor Interviews and Reports on Forced Labor <br/>
+      • UNESCO – Meiji Industrial Revolution Listings
+    </p>
+  </section>
 
-.content-box h2 {
-  margin-top: 0;
-  font-size: 1.8rem;
-}
+  <footer>
+    &copy; 2025 Hashima Island Project. All rights reserved.
+  </footer>
 
-.content-box p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-/* Quotes */
-blockquote {
-  margin: 20px 0;
-  padding: 15px 20px;
-  background: #e6f2ff;
-  border-left: 4px solid #3399ff;
-  font-style: italic;
-}
-
-.dark-mode blockquote {
-  background: #111e2e;
-  border-left-color: #66b2ff;
-}
-
-/* Timeline */
-.timeline-section {
-  margin-top: 60px;
-}
-
-.timeline {
-  border-left: 4px solid #3399ff;
-  padding-left: 30px;
-  position: relative;
-}
-
-.timeline-item {
-  margin-bottom: 25px;
-  position: relative;
-  font-size: 1.05rem;
-}
-
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -12px;
-  top: 4px;
-  width: 12px;
-  height: 12px;
-  background: #3399ff;
-  border-radius: 50%;
-}
-
-/* Image centering */
-.image-section img {
-  display: block;
-  margin: 0 auto 20px auto;
-  max-width: 100%;
-  height: auto;
-}
-
-/* Footer */
-footer {
-  background: #3399ff;
-  color: white;
-  text-align: center;
-  padding: 20px 10px;
-  margin-top: 60px;
-}
-
-.dark-mode footer {
-  background: #1a1a1a;
-}
+</body>
+</html>
