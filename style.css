@@ -1,169 +1,96 @@
-/* Base Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  --primary: #007aff;
+  --bg: #ffffff;
+  --text: #111;
+  --card-bg: #f5f5f5;
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  line-height: 1.6;
-  background-color: #ffffff;
-  color: #111111;
-  transition: background-color 0.3s, color 0.3s;
-  padding-bottom: 2rem;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
 }
 
-/* Hero Section */
+.dark-mode {
+  --bg: #111;
+  --text: #f0f0f0;
+  --card-bg: #1e1e1e;
+}
+
 .hero {
+  background: url("hashima.jpg") no-repeat center center/cover;
+  height: 400px;
   position: relative;
-  height: 60vh;
-  background: url('hashima.jpg') no-repeat center center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+}
+
+.logo {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 60px;
+  transition: 0.3s ease;
 }
 
 .text-overlay {
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 1rem 2rem;
   border-radius: 10px;
-  color: white;
 }
 
-.text-overlay h1 {
-  font-size: 3rem;
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
 }
 
-.text-overlay p {
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
+h2 {
+  color: var(--primary);
+  margin-top: 1rem;
 }
 
-/* Dark Mode Toggle */
-.toggle-container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin: 1rem;
-}
-
-#darkModeToggle {
-  margin-left: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: black;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-/* Navigation (Mobile-First) */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-}
-
-nav img.logo {
-  height: 40px;
-}
-
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.menu-toggle span {
-  height: 3px;
-  width: 25px;
-  background: #007aff;
-  margin-bottom: 5px;
-  border-radius: 2px;
-}
-
-.nav-links {
-  display: none;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #007aff;
-  padding: 0.5rem 1rem;
-}
-
-.show-nav {
-  display: flex;
-}
-
-/* Content Layout */
 .content {
-  max-width: 900px;
-  margin: auto;
   padding: 2rem 1rem;
 }
 
-section {
-  background-color: #f8f8f8;
-  padding: 2rem;
-  margin-bottom: 2rem;
+.section-box {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  margin: 1.5rem auto;
+  max-width: 800px;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.6s ease-out;
 }
 
-section.visible {
+.section-box.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-h2 {
-  color: #007aff;
-  margin-bottom: 1rem;
-  font-size: 1.6rem;
-}
-
-p {
-  margin-bottom: 1rem;
-  font-size: 1.05rem;
-}
-
 .section-image {
   width: 100%;
-  max-width: 700px;
-  border-radius: 10px;
-  margin: 1rem 0;
-  display: block;
+  border-radius: 12px;
+  margin-top: 1rem;
 }
 
-/* Quotes */
-.quote {
-  font-style: italic;
-  background-color: #e9f1ff;
-  padding: 1rem;
-  border-left: 5px solid #007aff;
-  margin: 1rem 0;
-  border-radius: 5px;
-}
-
-/* Timeline */
 .timeline {
-  border-left: 4px solid #007aff;
+  border-left: 4px solid var(--primary);
   padding-left: 1.5rem;
 }
 
 .timeline-event {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.6s ease-out;
+  transition: all 0.6s ease;
 }
 
 .timeline-event.visible {
@@ -171,95 +98,68 @@ p {
   transform: translateY(0);
 }
 
-.timeline-event h3 {
-  margin-bottom: 0.3rem;
-  color: #007aff;
+.quote {
+  background: var(--bg);
+  border-left: 4px solid var(--primary);
+  padding: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  background-color: rgba(0, 122, 255, 0.1);
+  border-radius: 6px;
 }
 
-/* Footer */
+ul {
+  padding-left: 1.5rem;
+}
+
 footer {
   text-align: center;
   padding: 2rem 1rem;
-  background-color: #f4f4f4;
-  color: #555;
-  font-size: 0.9rem;
+  background-color: var(--card-bg);
 }
 
-/* Dark Mode Styles */
-body.dark-mode {
-  background-color: #111;
-  color: #f1f1f1;
+.dark-toggle {
+  position: relative;
+  padding: 1rem;
+  text-align: left;
+  margin-left: 1rem;
 }
 
-body.dark-mode .hero {
-  background-blend-mode: multiply;
-}
-
-body.dark-mode .text-overlay {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #f1f1f1;
-}
-
-body.dark-mode section {
-  background-color: #1c1c1c;
-  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
-}
-
-body.dark-mode .quote {
-  background-color: #222;
-  border-left-color: #ccc;
-  color: #eee;
-}
-
-body.dark-mode h2, body.dark-mode .timeline-event h3 {
-  color: #50bfff;
-}
-
-body.dark-mode .nav-links a {
-  color: #50bfff;
-}
-
-body.dark-mode #darkModeToggle {
+#darkModeToggle {
+  background: none;
+  border: 2px solid #333;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
   background-color: white;
   color: black;
+  border-radius: 8px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+.dark-mode #darkModeToggle {
+  background-color: black;
+  color: white;
+  border-color: white;
+}
+
+@media screen and (max-width: 768px) {
   .hero {
-    height: 50vh;
+    height: 300px;
   }
 
   .text-overlay h1 {
     font-size: 2rem;
   }
 
-  .text-overlay p {
-    font-size: 1rem;
+  .section-box {
+    margin: 1rem 1rem;
   }
 
-  .nav-links {
-    display: none;
+  .logo {
+    width: 50px;
   }
 
-  .menu-toggle {
-    display: flex;
-  }
-
-  .show-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    background: #fff;
-    position: absolute;
-    right: 1rem;
-    top: 60px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    padding: 1rem;
-    border-radius: 10px;
-  }
-
-  body.dark-mode .show-nav {
-    background: #222;
+  #darkModeToggle {
+    font-size: 0.9rem;
   }
 }
