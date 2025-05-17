@@ -123,22 +123,23 @@ img {
 }
 
 /* Timeline */
-.timeline {
+timeline {
   position: relative;
-  padding-left: 50px; /* more space for dots and years */
+  padding-left: 60px; /* Increase spacing for timeline */
   border-left: 3px solid #007BFF;
-  margin-left: 10px;
+  margin-left: 0;
 }
 
 .timeline-item {
   position: relative;
+  padding-left: 20px; /* Ensures text doesn’t collide with dot */
   margin-bottom: 2rem;
 }
 
 .timeline-item .dot {
   position: absolute;
-  left: -23px; /* moved dot further left */
-  top: 6px;
+  left: -31px; /* Push dot further left */
+  top: 0.4rem; /* Aligns with text */
   background: #007BFF;
   border: 3px solid white;
   width: 16px;
@@ -151,8 +152,8 @@ img {
   margin: 0;
   font-size: 1.3rem;
   color: #007BFF;
-  padding-left: 8px; /* slight offset for better visual spacing */
-}
+  position: relative;
+  z-index: 1;
 
 /* Footer */
 footer {
