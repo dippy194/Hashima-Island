@@ -2,98 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hashima Island - History and Legacy</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background-color: #f8f9fa;
-    }
-
-    header.hero {
-      background-image: url('hashima.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      color: white;
-    }
-
-    .text-overlay {
-      background: rgba(0, 0, 0, 0.5);
-      padding: 2rem;
-      border-radius: 12px;
-      text-align: center;
-    }
-
-    .content {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem;
-    }
-
-    section {
-      margin-bottom: 4rem;
-      background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-
-    h1, h2, h3 {
-      color: #333;
-    }
-
     .timeline {
       margin: 3rem 0;
       border-left: 4px solid #007aff;
       padding-left: 1.5rem;
       position: relative;
     }
-
     .timeline-event {
       margin-bottom: 2rem;
       opacity: 0;
       transform: translateY(20px);
       transition: all 0.6s ease-out;
     }
-
     .timeline-event.visible {
       opacity: 1;
       transform: translateY(0);
     }
-
     .quote {
       font-style: italic;
       background-color: #f4f4f4;
       padding: 1rem;
       border-left: 4px solid #007aff;
-      margin: 2rem 0;
-      clear: both;
-      display: block;
+      margin: 1rem 0;
+      overflow-wrap: break-word;
     }
-
     .section-image {
       width: 100%;
       max-width: 700px;
-      margin: 1rem auto;
-      display: block;
+      margin: 1rem 0;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    footer {
-      background: #333;
-      color: white;
-      padding: 2rem;
-      text-align: center;
     }
   </style>
 </head>
@@ -106,13 +48,83 @@
   </header>
 
   <main class="content">
-    <!-- Retain your previously detailed sections here without deleting content -->
-    <!-- Just ensure quotes are styled with the .quote class and floated content is cleared -->
-  </main>
+    <section>
+      <h2>Introduction</h2>
+      <p>
+        Hashima Island (端島), commonly called Gunkanjima or "Battleship Island," lies off the coast of Nagasaki, Japan. The nickname derives from its warship-like appearance due to its concrete sea walls and dense architecture. Though initially known for its coal reserves and rapid industrial growth, the island also bears scars from Japan's darker wartime past.
+      </p>
+      <p>
+        As Japan National Tourism Organization <a href="https://www.japan.travel/en/spot/752/" target="_blank">describes</a>, the island symbolizes Japan’s industrial revolution. However, as time passed, survivors and researchers uncovered forced labor operations that had been buried beneath the industrial pride.
+      </p>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 Hashima Island Project. All rights reserved.</p>
-  </footer>
+    <section>
+      <h2>Industrial Rise: The Mitsubishi Era</h2>
+      <p>
+        Mitsubishi acquired the island in 1890 to exploit its rich coal reserves. By digging deep under the ocean floor, it engineered one of the most technically advanced undersea mining systems of its time. In 1916, Japan's first reinforced concrete apartment block was built here, setting the stage for vertical urban life.
+      </p>
+      <p>
+        At its peak, Hashima held over 5,000 people within a land area of just 6.3 hectares — a population density that was nine times higher than Tokyo’s.
+      </p>
+      <div class="quote">
+        “At its peak, more than 5,000 people lived on this small, 6.3-hectare island.” — <a href="https://www.japan.travel/en/spot/752/" target="_blank">Japan National Tourism Organization</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Life on the Island</h2>
+      <p>
+        The workers and their families lived in stacked apartment blocks with limited space. The island featured a school, a cinema, communal baths, and even rooftop playgrounds due to space constraints. Food, water, and supplies were imported from the mainland daily. The confined, concrete environment made life both innovative and claustrophobic.
+      </p>
+    </section>
+
+    <section>
+      <h2>Forced Korean Labor During WWII</h2>
+      <img src="korea.jpg" alt="Korean labor survivors" class="section-image">
+      <p>
+        From 1939 to 1945, the Japanese Empire brought more than 800 Koreans to Hashima to work under coercive conditions. These laborers were often unpaid, overworked, and physically abused. Yonhap News <a href="https://en.yna.co.kr/view/AEN20170727005900315" target="_blank">reported</a> that survivors likened the island to a prison where escape was impossible.
+      </p>
+      <div class="quote">
+        “We were forced to work underground for more than 12 hours a day… many were injured, and some even died.” — <a href="https://en.yna.co.kr/view/AEN20170727005900315" target="_blank">Yonhap News Agency</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Decline and Abandonment</h2>
+      <p>
+        As petroleum replaced coal in the 1960s, Japan’s dependence on mining dwindled. Hashima’s mines closed in 1974, and residents were forced to evacuate rapidly. The island was left intact — beds, dishes, and chalkboards still in place, giving the site a hauntingly preserved atmosphere.
+      </p>
+    </section>
+
+    <section>
+      <h2>UNESCO World Heritage Status and Controversy</h2>
+      <p>
+        In 2015, Hashima Island was added to the UNESCO World Heritage list. However, many — especially from South Korea — criticized the Japanese government for failing to clearly acknowledge the use of forced labor on the island. While Japan promised to honor these stories, signage remains vague, and advocacy groups continue pushing for clearer memorialization.
+      </p>
+    </section>
+
+    <section>
+      <h2>Timeline of Hashima Island</h2>
+      <div class="timeline">
+        <div class="timeline-event"><h3>1810</h3><p>Coal discovered on Hashima by local fishermen.</p></div>
+        <div class="timeline-event"><h3>1890</h3><p>Mitsubishi purchases the island and opens mining shafts.</p></div>
+        <div class="timeline-event"><h3>1916</h3><p>First reinforced concrete building constructed.</p></div>
+        <div class="timeline-event"><h3>1939–1945</h3><p>Over 800 Koreans forced into labor on Hashima during WWII.</p></div>
+        <div class="timeline-event"><h3>1959</h3><p>Population peaks at 5,267 — highest recorded density.</p></div>
+        <div class="timeline-event"><h3>1974</h3><p>Coal mine closes. Island abandoned.</p></div>
+        <div class="timeline-event"><h3>2015</h3><p>UNESCO World Heritage designation sparks global debate.</p></div>
+        <div class="timeline-event"><h3>2017</h3><p>Survivors call for clearer recognition of forced labor — <a href="https://en.yna.co.kr/view/AEN20170727005900315" target="_blank">Yonhap News</a>.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://www.japan.travel/en/spot/752/" target="_blank">Japan National Tourism Organization</a></li>
+        <li><a href="https://en.yna.co.kr/view/AEN20170727005900315" target="_blank">Yonhap News Agency</a></li>
+      </ul>
+    </section>
+  </main>
 
   <script>
     const observer = new IntersectionObserver((entries) => {
