@@ -14,12 +14,14 @@ body.dark-mode {
 }
 
 /* ===== Hamburger Navigation ===== */
+/* Hamburger Navigation - Top Right */
 .site-nav {
   position: fixed;
-  top: 70px;
-  left: 20px;
+  top: 20px;
+  right: 20px;
   z-index: 1200;
 }
+
 #nav-toggle {
   display: none;
   background: #fff;
@@ -32,24 +34,27 @@ body.dark-mode {
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
 }
+
 #nav-menu {
   position: fixed;
   top: 0;
-  left: -230px;
+  right: -230px;
   width: 200px;
   height: 100vh;
   background: #fff;
-  box-shadow: 4px 0 22px #007bff33;
+  box-shadow: -4px 0 22px #007bff33;
   padding: 2.5rem 1rem 1rem 1.2rem;
   display: flex;
   flex-direction: column;
   gap: 1.1rem;
-  transition: left 0.28s cubic-bezier(.7,.12,.13,1.08);
+  transition: right 0.28s cubic-bezier(.7,.12,.13,1.08);
   z-index: 1201;
   opacity: 0.98;
-  border-radius: 0 18px 18px 0;
+  border-radius: 18px 0 0 18px;
 }
-#nav-menu.open { left: 0; }
+#nav-menu.open {
+  right: 0;
+}
 #nav-menu li { list-style: none; }
 #nav-menu a {
   color: #007BFF;
@@ -60,17 +65,36 @@ body.dark-mode {
   padding: 0.22rem 0.7rem;
   transition: background 0.15s, color 0.15s;
 }
-#nav-menu a:hover { background: #e9f6ff; color: #0056b3; }
-body.dark-mode #nav-menu { background: #182235; box-shadow: 4px 0 22px #43d3f833; }
+#nav-menu a:hover {
+  background: #e9f6ff;
+  color: #0056b3;
+}
+body.dark-mode #nav-menu {
+  background: #182235;
+  box-shadow: -4px 0 22px #43d3f833;
+}
 body.dark-mode #nav-menu a { color: #43d3f8; }
 body.dark-mode #nav-menu a:hover { background: #223ea3; color: #fff; }
+
+/* Responsive Hamburger */
 @media (max-width: 950px) {
-  .site-nav { top: 70px; left: 20px; }
-  #nav-toggle { display: block; }
-  #nav-menu { display: flex; }
+  .site-nav {
+    top: 20px;
+    right: 20px;
+    left: auto;
+  }
+  #nav-toggle {
+    display: block;
+  }
+  #nav-menu {
+    display: flex;
+  }
 }
 @media (min-width: 951px) {
-  #nav-toggle, #nav-menu { display: none !important; }
+  #nav-toggle,
+  #nav-menu {
+    display: none !important;
+  }
 }
 
 /* ===== Dark mode toggle button (silhouette morph) ===== */
