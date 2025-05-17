@@ -122,22 +122,23 @@ img {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Timeline styles */
+/* Timeline */
 .timeline {
   position: relative;
-  margin-left: 20px;
+  padding-left: 40px; /* increased from 20px */
   border-left: 3px solid #007BFF;
-  padding-left: 20px;
+  margin-left: 10px;
 }
 
 .timeline-item {
   position: relative;
   margin-bottom: 2rem;
+  padding-left: 10px; /* keeps text offset from the dot */
 }
 
 .timeline-item .dot {
   position: absolute;
-  left: -11px;
+  left: -11px; /* original value was okay if adjusted with padding */
   top: 5px;
   background: #007BFF;
   border: 3px solid white;
@@ -151,10 +152,7 @@ img {
   margin: 0;
   font-size: 1.3rem;
   color: #007BFF;
-}
-
-.timeline-item p {
-  margin-top: 0.5rem;
+  padding-left: 10px; /* ensures the date is shifted right */
 }
 
 /* Footer */
