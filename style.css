@@ -29,46 +29,43 @@ body.dark-mode {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.3s, color 0.3s;
   z-index: 1201;
   padding: 0;
+  transition: background 0.3s, color 0.3s;
 }
 body.dark-mode .dark-mode-toggle {
   background: #fff;
   color: #000;
 }
-
 .icon-sun-moon {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   display: block;
   position: relative;
 }
-
 .icon-sun-moon svg {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   fill: none;
   stroke: currentColor;
-  stroke-width: 2.2;
-  transition: opacity 0.4s, transform 0.4s;
+  stroke-width: 2.4;
   display: block;
   pointer-events: none;
+  transition: opacity 0.4s, transform 0.4s;
 }
 .icon-sun-moon .sun {
   opacity: 0;
-  transform: scale(0.75) rotate(90deg);
-  transition: opacity 0.4s, transform 0.4s;
+  transform: scale(0.72) rotate(90deg);
   z-index: 2;
+  transition: opacity 0.4s, transform 0.4s;
 }
 .icon-sun-moon .moon {
   opacity: 1;
   transform: scale(1) rotate(0deg);
-  transition: opacity 0.4s, transform 0.4s;
   z-index: 1;
+  transition: opacity 0.4s, transform 0.4s;
 }
 body.dark-mode .icon-sun-moon .sun {
   opacity: 1;
@@ -76,7 +73,7 @@ body.dark-mode .icon-sun-moon .sun {
 }
 body.dark-mode .icon-sun-moon .moon {
   opacity: 0;
-  transform: scale(0.75) rotate(-90deg);
+  transform: scale(0.72) rotate(-90deg);
 }
 
 /* ====== Hamburger Navigation (Top Right) ====== */
@@ -424,8 +421,9 @@ a:hover { text-decoration: underline; }
   .hero h1 { font-size: 2.2rem; padding: 1rem; }
   .container { padding: 2rem 5%; }
   h2 { font-size: 1.5rem; }
-  .dark-mode-toggle { width: 40px; height: 40px; }
-  .icon-sun-moon, .icon-sun-moon svg { width: 26px; height: 26px; }
+  .dark-mode-toggle { width: 44px; height: 44px; }
+  .icon-sun-moon { width: 28px; height: 28px; }
+  .icon-sun-moon svg { width: 28px; height: 28px; }
   .author-bit-simple { padding: 0.22rem 1rem 0.22rem 0.5rem; }
 }
 @media (max-width: 768px) {
@@ -448,5 +446,4 @@ a:hover { text-decoration: underline; }
   width: 48px;
   height: 48px;
   font-size: 2rem;
-  cursor: pointer;
-  box-shadow: 0 4px
+  cursor
