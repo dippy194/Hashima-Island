@@ -120,44 +120,27 @@ body.dark-mode .dark-mode-toggle {
   outline: 2px solid #007BFF;
   outline-offset: 2px;
 }
-.icon-sun-moon {
-  width: 24px;
-  height: 24px;
-  position: relative;
-  display: inline-block;
-}
-.icon-sun-moon svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2.1;
-  pointer-events: none;
-}
 .icon-sun-moon .sun {
-  opacity: 1;
-  transform: scale(1) rotate(0deg);
-  transition: opacity 0.4s, transform 0.4s;
-  z-index: 2;
-}
-.icon-sun-moon .moon {
-  opacity: 0;
-  transform: scale(0.6) rotate(-70deg);
+  opacity: 0; /* hide sun in light mode! */
+  transform: scale(0.6) rotate(70deg);
   transition: opacity 0.4s, transform 0.4s;
   z-index: 1;
 }
-body.dark-mode .icon-sun-moon .sun {
-  opacity: 0;
-  transform: scale(0.6) rotate(70deg);
+.icon-sun-moon .moon {
+  opacity: 1; /* show moon in light mode! */
+  transform: scale(1) rotate(0deg);
+  transition: opacity 0.4s, transform 0.4s;
+  z-index: 2;
 }
-body.dark-mode .icon-sun-moon .moon {
-  opacity: 1;
+body.dark-mode .icon-sun-moon .sun {
+  opacity: 1; /* show sun in dark mode! */
   transform: scale(1) rotate(0deg);
   z-index: 2;
+}
+body.dark-mode .icon-sun-moon .moon {
+  opacity: 0; /* hide moon in dark mode! */
+  transform: scale(0.6) rotate(-70deg);
+  z-index: 1;
 }
 
 /* ===== Hero Section ===== */
