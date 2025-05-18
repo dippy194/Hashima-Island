@@ -13,15 +13,13 @@ body.dark-mode {
   color: #eee;
 }
 
-/* ===== Hamburger Navigation ===== */
-/* Hamburger Navigation - Top Right */
+/* ===== Hamburger Navigation - Top Right ===== */
 .site-nav {
   position: fixed;
   top: 20px;
   right: 20px;
   z-index: 1200;
 }
-
 #nav-toggle {
   display: none;
   background: #fff;
@@ -34,7 +32,6 @@ body.dark-mode {
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
 }
-
 #nav-menu {
   position: fixed;
   top: 0;
@@ -52,9 +49,7 @@ body.dark-mode {
   opacity: 0.98;
   border-radius: 18px 0 0 18px;
 }
-#nav-menu.open {
-  right: 0;
-}
+#nav-menu.open { right: 0; }
 #nav-menu li { list-style: none; }
 #nav-menu a {
   color: #007BFF;
@@ -97,7 +92,7 @@ body.dark-mode #nav-menu a:hover { background: #223ea3; color: #fff; }
   }
 }
 
-/* ===== Dark mode toggle button (silhouette morph) ===== */
+/* ===== Dark Mode Toggle (Silhouette SVG, Morph) ===== */
 .dark-mode-toggle {
   position: fixed;
   top: 20px;
@@ -121,10 +116,15 @@ body.dark-mode .dark-mode-toggle {
   background: #fff;
   color: #000;
 }
+.dark-mode-toggle:focus {
+  outline: 2px solid #007BFF;
+  outline-offset: 2px;
+}
 .icon-sun-moon {
   width: 24px;
   height: 24px;
   position: relative;
+  display: inline-block;
 }
 .icon-sun-moon svg {
   width: 100%;
@@ -135,24 +135,24 @@ body.dark-mode .dark-mode-toggle {
   left: 0;
   fill: none;
   stroke: currentColor;
-  stroke-width: 2;
-  transition: fill 0.35s, stroke 0.35s;
+  stroke-width: 2.1;
+  pointer-events: none;
 }
 .icon-sun-moon .sun {
   opacity: 1;
   transform: scale(1) rotate(0deg);
-  transition: opacity 0.35s, transform 0.35s;
+  transition: opacity 0.4s, transform 0.4s;
   z-index: 2;
 }
 .icon-sun-moon .moon {
   opacity: 0;
-  transform: scale(0.7) rotate(-90deg);
-  transition: opacity 0.35s, transform 0.35s;
+  transform: scale(0.6) rotate(-70deg);
+  transition: opacity 0.4s, transform 0.4s;
   z-index: 1;
 }
 body.dark-mode .icon-sun-moon .sun {
   opacity: 0;
-  transform: scale(0.7) rotate(90deg);
+  transform: scale(0.6) rotate(70deg);
 }
 body.dark-mode .icon-sun-moon .moon {
   opacity: 1;
@@ -182,7 +182,8 @@ body.dark-mode .icon-sun-moon .moon {
 body.dark-mode .hero::before {
   background: linear-gradient(180deg,rgba(14,16,36,0.83) 85%,rgba(16,34,58,0.7) 100%);
 }
-.hero h1, #hero-title {
+.hero h1,
+#hero-title {
   position: relative;
   z-index: 2;
 }
@@ -444,3 +445,4 @@ a:hover { text-decoration: underline; }
   cursor: pointer;
   box-shadow: 0 4px 18px #007bff33;
   z-index: 9999;
+  transition: background 0.
