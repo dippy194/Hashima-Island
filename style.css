@@ -40,8 +40,8 @@ body.dark-mode .dark-mode-toggle {
 .icon-sun-moon {
   width: 40px;
   height: 40px;
-  display: block;
   position: relative;
+  display: block;
 }
 .icon-sun-moon svg {
   width: 40px;
@@ -56,24 +56,24 @@ body.dark-mode .dark-mode-toggle {
   transition: opacity 0.4s, transform 0.4s;
 }
 .icon-sun-moon .sun {
-  opacity: 0;
-  transform: scale(0.72) rotate(90deg);
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
   z-index: 2;
   transition: opacity 0.4s, transform 0.4s;
 }
 .icon-sun-moon .moon {
-  opacity: 1;
-  transform: scale(1) rotate(0deg);
+  opacity: 0;
+  transform: scale(0.72) rotate(-90deg);
   z-index: 1;
   transition: opacity 0.4s, transform 0.4s;
 }
 body.dark-mode .icon-sun-moon .sun {
-  opacity: 1;
-  transform: scale(1) rotate(0deg);
+  opacity: 0;
+  transform: scale(0.72) rotate(90deg);
 }
 body.dark-mode .icon-sun-moon .moon {
-  opacity: 0;
-  transform: scale(0.72) rotate(-90deg);
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
 }
 
 /* ====== Hamburger Navigation (Top Right) ====== */
@@ -83,7 +83,6 @@ body.dark-mode .icon-sun-moon .moon {
   right: 20px;
   z-index: 1200;
 }
-
 #nav-toggle {
   display: none;
   background: #fff;
@@ -96,7 +95,6 @@ body.dark-mode .icon-sun-moon .moon {
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
 }
-
 #nav-menu {
   position: fixed;
   top: 0;
@@ -117,9 +115,7 @@ body.dark-mode .icon-sun-moon .moon {
 #nav-menu.open {
   right: 0;
 }
-#nav-menu li {
-  list-style: none;
-}
+#nav-menu li { list-style: none; }
 #nav-menu a {
   color: #007BFF;
   text-decoration: none;
@@ -139,7 +135,6 @@ body.dark-mode #nav-menu {
 }
 body.dark-mode #nav-menu a { color: #43d3f8; }
 body.dark-mode #nav-menu a:hover { background: #223ea3; color: #fff; }
-
 /* Hamburger appears on mobile */
 @media (max-width: 950px) {
   #nav-toggle { display: block; }
@@ -194,7 +189,7 @@ body.dark-mode .hero::before {
   -webkit-background-clip: text;
   color: transparent;
   animation: shine 2.5s linear infinite;
-  -webkit-text-fill-color: transparent; /* Safari */
+  -webkit-text-fill-color: transparent;
 }
 @keyframes shine {
   to { background-position: 200% center; }
@@ -252,13 +247,15 @@ section {
   padding: 2rem;
   border-radius: 15px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  opacity: 1;        /* Always visible by default! */
+  transform: none;   /* No animation if JS fails */
   transition: transform 0.6s, opacity 0.6s;
-  opacity: 0;
-  transform: translateY(40px);
 }
-section.visible { opacity: 1; transform: translateY(0); }
+section.visible {    /* Animation for reveal, if JS works */
+  opacity: 1;
+  transform: translateY(0);
+}
 body.dark-mode section { background: #1e1e1e; }
-
 h2 {
   color: #007BFF;
   font-size: 2rem;
@@ -446,4 +443,6 @@ a:hover { text-decoration: underline; }
   width: 48px;
   height: 48px;
   font-size: 2rem;
-  cursor
+  cursor: pointer;
+  z-index: 1202;
+}
