@@ -446,3 +446,33 @@ a:hover { text-decoration: underline; }
   cursor: pointer;
   z-index: 1202;
 }
+
+/* ====== Quote Box for Survivor Testimonies ====== */
+.quote-box {
+  background: #e8f2ff;
+  border-left: 6px solid #3887fa;
+  padding: 1.1rem 1.5rem;
+  margin: 2rem 0 2rem 0;
+  border-radius: 12px;
+  font-style: italic;
+  position: relative;
+  box-shadow: 0 4px 20px #3887fa15;
+  color: #183054;
+  font-size: 1.15rem;
+}
+.quote-box .quote-source {
+  display: block;
+  margin-top: 0.7rem;
+  font-style: normal;
+  font-weight: 500;
+  color: #367ada;
+  font-size: 1rem;
+}
+body.dark-mode .quote-box {
+  background: #223b57;
+  border-left: 6px solid #43d3f8;
+  color: #eaf6ff;
+}
+body.dark-mode .quote-box .quote-source {
+  color: #6fc6fa;
+}
