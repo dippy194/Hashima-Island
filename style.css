@@ -479,3 +479,15 @@ body.dark-mode .quote-box {
 body.dark-mode .quote-box .quote-source {
   color: #6fc6fa;
 }
+
+.center-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.center-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
