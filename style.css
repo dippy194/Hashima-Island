@@ -55,6 +55,7 @@ body.dark-mode .dark-mode-toggle {
   pointer-events: none;
   transition: opacity 0.4s, transform 0.4s;
 }
+/* Show moon in light mode */
 .icon-sun-moon .sun {
   opacity: 0;
   transform: scale(0.72) rotate(90deg);
@@ -67,6 +68,8 @@ body.dark-mode .dark-mode-toggle {
   z-index: 1;
   transition: opacity 0.4s, transform 0.4s;
 }
+
+/* Show sun in dark mode */
 body.dark-mode .icon-sun-moon .sun {
   opacity: 1;
   transform: scale(1) rotate(0deg);
